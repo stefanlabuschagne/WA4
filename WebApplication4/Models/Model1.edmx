@@ -1,0 +1,1079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DAISYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DAISY.dbo.AgeGroups' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AgeGroups">
+          <Property Name="Group" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityType Name="Callers">
+          <Key>
+            <PropertyRef Name="CALLERID" />
+          </Key>
+          <Property Name="CALLERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Surname" Type="varchar" MaxLength="100" />
+          <Property Name="Age" Type="varchar" MaxLength="10" />
+          <Property Name="Sex" Type="varchar" MaxLength="10" />
+          <Property Name="Race" Type="varchar" MaxLength="50" />
+          <Property Name="Occupation" Type="varchar" MaxLength="50" />
+          <Property Name="MedicalAid" Type="varchar" MaxLength="10" />
+          <Property Name="Medication" Type="varchar" MaxLength="10" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Province" Type="varchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+          <Property Name="Telephone1" Type="varchar" MaxLength="15" />
+          <Property Name="Telephone2" Type="varchar" MaxLength="15" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="Suburb" Type="varchar" MaxLength="50" />
+          <Property Name="DLLocation" Type="varchar" MaxLength="50" />
+          <Property Name="DLType" Type="varchar" MaxLength="50" />
+          <Property Name="DLSource" Type="varchar" MaxLength="50" />
+          <Property Name="DLStudentNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Calls">
+          <Key>
+            <PropertyRef Name="CALLID" />
+          </Key>
+          <Property Name="CALLID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CALLERID" Type="int" />
+          <Property Name="Counsellor" Type="varchar" MaxLength="100" />
+          <Property Name="CallDate" Type="datetime" />
+          <Property Name="ReasonADHD" Type="bit" />
+          <Property Name="ReasonAlzheimersDementia" Type="bit" />
+          <Property Name="ReasonAnxiety" Type="bit" />
+          <Property Name="ReasonBipolar" Type="bit" />
+          <Property Name="ReasonDebtPovertyUnemployment" Type="bit" />
+          <Property Name="ReasonDepression" Type="bit" />
+          <Property Name="ReasonEatingDisoirder" Type="bit" />
+          <Property Name="ReasonHIVAIDS" Type="bit" />
+          <Property Name="ReasonInformation" Type="bit" />
+          <Property Name="ReasonLossGriefLoneliness" Type="bit" />
+          <Property Name="ReasonNone" Type="bit" />
+          <Property Name="ReasonOCD" Type="bit" />
+          <Property Name="ReasonOtherIllness" Type="bit" />
+          <Property Name="ReasonPhysicalEmotionalAbuse" Type="bit" />
+          <Property Name="ReasonPostNatalDepression" Type="bit" />
+          <Property Name="ReasonPTSDTrauma" Type="bit" />
+          <Property Name="ReasonReationshipDomesticAbuse" Type="bit" />
+          <Property Name="ReasonSchizophrenia" Type="bit" />
+          <Property Name="ReasonSelfMutilation" Type="bit" />
+          <Property Name="ReasonSexualAbuseRape" Type="bit" />
+          <Property Name="ReasonSleepingDisorder" Type="bit" />
+          <Property Name="ReasonSocialPhobia" Type="bit" />
+          <Property Name="ReasonStress" Type="bit" />
+          <Property Name="ReasonSubstanceAbuse" Type="bit" />
+          <Property Name="ReasonSuicide" Type="bit" />
+          <Property Name="ReferDASGFaceToFace" Type="bit" />
+          <Property Name="ReferGP" Type="bit" />
+          <Property Name="ReferGovHospital" Type="bit" />
+          <Property Name="ReferLiteratureWebsite" Type="bit" />
+          <Property Name="ReferNone" Type="bit" />
+          <Property Name="ReferOther" Type="bit" />
+          <Property Name="ReferOtherNGOHelpline" Type="bit" />
+          <Property Name="ReferPoliceStation" Type="bit" />
+          <Property Name="ReferPrivateHospital" Type="bit" />
+          <Property Name="ReferPsychiatrist" Type="bit" />
+          <Property Name="ReferPsychologist" Type="bit" />
+          <Property Name="ReferRapeCrisis" Type="bit" />
+          <Property Name="ReferShelter" Type="bit" />
+          <Property Name="ReferSocialWorker" Type="bit" />
+          <Property Name="ReferSupportGroup" Type="bit" />
+          <Property Name="ReferTraumaCentre" Type="bit" />
+          <Property Name="CallSummary" Type="varchar" MaxLength="8000" />
+          <Property Name="ReasonFrequentCaller" Type="bit" />
+          <Property Name="ReasonBullying" Type="bit" />
+          <Property Name="ReasonPregnancy" Type="bit" />
+          <Property Name="ReasonSexuality" Type="bit" />
+          <Property Name="ReferRehabilitationCentre" Type="bit" />
+          <Property Name="ReasonBorderlinePersonalityDisorder" Type="bit" />
+          <Property Name="HelpLine" Type="varchar" MaxLength="50" />
+          <Property Name="ReasonOtherReason" Type="bit" />
+          <Property Name="ReasonFollowUp" Type="bit" />
+          <Property Name="ReferUniversityStudentWellness" Type="bit" />
+          <Property Name="ReferSadagHelpLine" Type="bit" />
+          <Property Name="ReferSelfHelp" Type="bit" />
+          <Property Name="ReferUber" Type="bit" />
+          <Property Name="DLCallTimeOfDay" Type="varchar" MaxLength="50" />
+          <Property Name="CalledOnBehalfOf" Type="varchar" MaxLength="50" />
+          <Property Name="ActionPoints" Type="varchar" MaxLength="8000" />
+          <Property Name="ReasonRelationshipRomanticIssues" Type="bit" />
+          <Property Name="ReasonRelationshipFamilyIssues" Type="bit" />
+          <Property Name="ReferCompanyEAP" Type="bit" />
+          <Property Name="ReferUniversitySupportServices" Type="bit" />
+          <Property Name="DistressRatingBegining" Type="int" />
+          <Property Name="DistressRatingEnd" Type="int" />
+        </EntityType>
+        <EntityType Name="Counsellors">
+          <Key>
+            <PropertyRef Name="Counsellor" />
+          </Key>
+          <Property Name="Counsellor" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLLocations">
+          <Key>
+            <PropertyRef Name="Location" />
+          </Key>
+          <Property Name="Location" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLSources">
+          <Key>
+            <PropertyRef Name="Source" />
+          </Key>
+          <Property Name="Source" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLTimes">
+          <Key>
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="Time" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLTypes">
+          <Key>
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Helplines">
+          <Key>
+            <PropertyRef Name="Helpline" />
+          </Key>
+          <Property Name="Helpline" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SQL COMMANDS">
+          <Key>
+            <PropertyRef Name="RowNumber" />
+          </Key>
+          <Property Name="RowNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventClass" Type="int" />
+          <Property Name="TextData" Type="ntext" />
+          <Property Name="SPID" Type="int" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="BinaryData" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DAISY.dbo.DownloadDataCurrentYear' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DownloadDataCurrentYear">
+          <Property Name="Year" Type="int" />
+          <Property Name="Month" Type="nvarchar" MaxLength="4000" />
+          <Property Name="CallDate" Type="datetime" />
+          <Property Name="Age" Type="varchar" MaxLength="10" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="Race" Type="varchar" MaxLength="50" />
+          <Property Name="MedicalAid" Type="varchar" MaxLength="10" />
+          <Property Name="Medication" Type="varchar" MaxLength="10" />
+          <Property Name="Province" Type="varchar" MaxLength="50" />
+          <Property Name="ReasonADHD" Type="bit" />
+          <Property Name="ReasonAlzheimersDementia" Type="bit" />
+          <Property Name="ReasonAnxiety" Type="bit" />
+          <Property Name="ReasonBipolar" Type="bit" />
+          <Property Name="ReasonDebtPovertyUnemployment" Type="bit" />
+          <Property Name="ReasonDepression" Type="bit" />
+          <Property Name="ReasonEatingDisoirder" Type="bit" />
+          <Property Name="ReasonHIVAIDS" Type="bit" />
+          <Property Name="ReasonInformation" Type="bit" />
+          <Property Name="ReasonLossGriefLoneliness" Type="bit" />
+          <Property Name="ReasonNone" Type="bit" />
+          <Property Name="ReasonOCD" Type="bit" />
+          <Property Name="ReasonOtherIllness" Type="bit" />
+          <Property Name="ReasonPhysicalEmotionalAbuse" Type="bit" />
+          <Property Name="ReasonPostNatalDepression" Type="bit" />
+          <Property Name="ReasonPTSDTrauma" Type="bit" />
+          <Property Name="ReasonReationshipDomesticAbuse" Type="bit" />
+          <Property Name="ReasonSchizophrenia" Type="bit" />
+          <Property Name="ReasonSelfMutilation" Type="bit" />
+          <Property Name="ReasonSexualAbuseRape" Type="bit" />
+          <Property Name="ReasonSleepingDisorder" Type="bit" />
+          <Property Name="ReasonSocialPhobia" Type="bit" />
+          <Property Name="ReasonStress" Type="bit" />
+          <Property Name="ReasonSubstanceAbuse" Type="bit" />
+          <Property Name="ReasonSuicide" Type="bit" />
+          <Property Name="ReasonFrequentCaller" Type="bit" />
+          <Property Name="ReasonBullying" Type="bit" />
+          <Property Name="ReasonPregnancy" Type="bit" />
+          <Property Name="ReasonSexuality" Type="bit" />
+          <Property Name="ReasonOtherReason" Type="bit" />
+          <Property Name="ReasonFollowUp" Type="bit" />
+          <Property Name="ReferDASGFaceToFace" Type="bit" />
+          <Property Name="ReferGP" Type="bit" />
+          <Property Name="ReferGovHospital" Type="bit" />
+          <Property Name="ReferLiteratureWebsite" Type="bit" />
+          <Property Name="ReferNone" Type="bit" />
+          <Property Name="ReferOther" Type="bit" />
+          <Property Name="ReferOtherNGOHelpline" Type="bit" />
+          <Property Name="ReferPoliceStation" Type="bit" />
+          <Property Name="ReferPrivateHospital" Type="bit" />
+          <Property Name="ReferPsychiatrist" Type="bit" />
+          <Property Name="ReferPsychologist" Type="bit" />
+          <Property Name="ReferRapeCrisis" Type="bit" />
+          <Property Name="ReferShelter" Type="bit" />
+          <Property Name="ReferSocialWorker" Type="bit" />
+          <Property Name="ReferSupportGroup" Type="bit" />
+          <Property Name="ReferTraumaCentre" Type="bit" />
+          <Property Name="ReferRehabilitationCentre" Type="bit" />
+          <Property Name="ReasonBorderlinePersonalityDisorder" Type="bit" />
+          <Property Name="ReferUniversityStudentWellness" Type="bit" />
+          <Property Name="ReferSadagHelpLine" Type="bit" />
+          <Property Name="ReferSelfHelp" Type="bit" />
+          <Property Name="ReferUber" Type="bit" />
+          <Property Name="HelpLine" Type="varchar" MaxLength="50" />
+          <Property Name="DLCallTimeOfDay" Type="varchar" MaxLength="50" />
+          <Property Name="CalledOnBehalfOf" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DAISY.dbo.Stats By Disorder' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Stats By Disorder">
+          <Property Name="Measure" Type="varchar" MaxLength="38" />
+          <Property Name="Jan" Type="int" />
+          <Property Name="Feb" Type="int" />
+          <Property Name="Mar" Type="int" />
+          <Property Name="Apr" Type="int" />
+          <Property Name="May" Type="int" />
+          <Property Name="Jun" Type="int" />
+          <Property Name="Jul" Type="int" />
+          <Property Name="Aug" Type="int" />
+          <Property Name="Sep" Type="int" />
+          <Property Name="Oct" Type="int" />
+          <Property Name="Nov" Type="int" />
+          <Property Name="Dec" Type="int" />
+          <Property Name="Total" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DAISY.dbo.Stats By Province' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Stats By Province">
+          <Property Name="Measure" Type="varchar" MaxLength="50" />
+          <Property Name="Jan" Type="int" />
+          <Property Name="Feb" Type="int" />
+          <Property Name="Mar" Type="int" />
+          <Property Name="Apr" Type="int" />
+          <Property Name="May" Type="int" />
+          <Property Name="Jun" Type="int" />
+          <Property Name="Jul" Type="int" />
+          <Property Name="Aug" Type="int" />
+          <Property Name="Sep" Type="int" />
+          <Property Name="Oct" Type="int" />
+          <Property Name="Nov" Type="int" />
+          <Property Name="Dec" Type="int" />
+          <Property Name="Total" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DAISY.dbo.Stats by Race' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Stats by Race">
+          <Property Name="Measure" Type="varchar" MaxLength="50" />
+          <Property Name="Jan" Type="int" />
+          <Property Name="Feb" Type="int" />
+          <Property Name="Mar" Type="int" />
+          <Property Name="Apr" Type="int" />
+          <Property Name="May" Type="int" />
+          <Property Name="Jun" Type="int" />
+          <Property Name="Jul" Type="int" />
+          <Property Name="Aug" Type="int" />
+          <Property Name="Sep" Type="int" />
+          <Property Name="Oct" Type="int" />
+          <Property Name="Nov" Type="int" />
+          <Property Name="Dec" Type="int" />
+          <Property Name="Total" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DAISY.dbo.Stats by Sex' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Stats by Sex">
+          <Property Name="Measure" Type="varchar" MaxLength="10" />
+          <Property Name="Jan" Type="int" />
+          <Property Name="Feb" Type="int" />
+          <Property Name="Mar" Type="int" />
+          <Property Name="Apr" Type="int" />
+          <Property Name="May" Type="int" />
+          <Property Name="Jun" Type="int" />
+          <Property Name="Jul" Type="int" />
+          <Property Name="Aug" Type="int" />
+          <Property Name="Sep" Type="int" />
+          <Property Name="Oct" Type="int" />
+          <Property Name="Nov" Type="int" />
+          <Property Name="Dec" Type="int" />
+          <Property Name="Total" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DAISY.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Function Name="CamelCase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="Str" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CreateCaseUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CALLERID" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Surname" Type="varchar" Mode="In" />
+          <Parameter Name="Age" Type="varchar" Mode="In" />
+          <Parameter Name="Sex" Type="varchar" Mode="In" />
+          <Parameter Name="Race" Type="varchar" Mode="In" />
+          <Parameter Name="Occupation" Type="varchar" Mode="In" />
+          <Parameter Name="MedicalAid" Type="varchar" Mode="In" />
+          <Parameter Name="Medication" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="Province" Type="varchar" Mode="In" />
+          <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+          <Parameter Name="Telephone1" Type="varchar" Mode="In" />
+          <Parameter Name="Telephone2" Type="varchar" Mode="In" />
+          <Parameter Name="EmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="Suburb" Type="varchar" Mode="In" />
+          <Parameter Name="DLLocation" Type="varchar" Mode="In" />
+          <Parameter Name="DLType" Type="varchar" Mode="In" />
+          <Parameter Name="DLSource" Type="varchar" Mode="In" />
+          <Parameter Name="DLStudentNumber" Type="varchar" Mode="In" />
+          <Parameter Name="Counsellor" Type="varchar" Mode="In" />
+          <Parameter Name="CallDate" Type="datetime" Mode="In" />
+          <Parameter Name="ReasonADHD" Type="bit" Mode="In" />
+          <Parameter Name="ReasonAlzheimersDementia" Type="bit" Mode="In" />
+          <Parameter Name="ReasonAnxiety" Type="bit" Mode="In" />
+          <Parameter Name="ReasonBipolar" Type="bit" Mode="In" />
+          <Parameter Name="ReasonDebtPovertyUnemployment" Type="bit" Mode="In" />
+          <Parameter Name="ReasonDepression" Type="bit" Mode="In" />
+          <Parameter Name="ReasonEatingDisoirder" Type="bit" Mode="In" />
+          <Parameter Name="ReasonHIVAIDS" Type="bit" Mode="In" />
+          <Parameter Name="ReasonInformation" Type="bit" Mode="In" />
+          <Parameter Name="ReasonLossGriefLoneliness" Type="bit" Mode="In" />
+          <Parameter Name="ReasonNone" Type="bit" Mode="In" />
+          <Parameter Name="ReasonOCD" Type="bit" Mode="In" />
+          <Parameter Name="ReasonOtherIllness" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPhysicalEmotionalAbuse" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPostNatalDepression" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPTSDTrauma" Type="bit" Mode="In" />
+          <Parameter Name="ReasonReationshipDomesticAbuse" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSchizophrenia" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSelfMutilation" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSexualAbuseRape" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSleepingDisorder" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSocialPhobia" Type="bit" Mode="In" />
+          <Parameter Name="ReasonStress" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSubstanceAbuse" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSuicide" Type="bit" Mode="In" />
+          <Parameter Name="ReferDASGFaceToFace" Type="bit" Mode="In" />
+          <Parameter Name="ReferGP" Type="bit" Mode="In" />
+          <Parameter Name="ReferGovHospital" Type="bit" Mode="In" />
+          <Parameter Name="ReferLiteratureWebsite" Type="bit" Mode="In" />
+          <Parameter Name="ReferNone" Type="bit" Mode="In" />
+          <Parameter Name="ReferOther" Type="bit" Mode="In" />
+          <Parameter Name="ReferOtherNGOHelpline" Type="bit" Mode="In" />
+          <Parameter Name="ReferPoliceStation" Type="bit" Mode="In" />
+          <Parameter Name="ReferPrivateHospital" Type="bit" Mode="In" />
+          <Parameter Name="ReferPsychiatrist" Type="bit" Mode="In" />
+          <Parameter Name="ReferPsychologist" Type="bit" Mode="In" />
+          <Parameter Name="ReferRapeCrisis" Type="bit" Mode="In" />
+          <Parameter Name="ReferShelter" Type="bit" Mode="In" />
+          <Parameter Name="ReferSocialWorker" Type="bit" Mode="In" />
+          <Parameter Name="ReferSupportGroup" Type="bit" Mode="In" />
+          <Parameter Name="ReferTraumaCentre" Type="bit" Mode="In" />
+          <Parameter Name="CallSummary" Type="varchar" Mode="In" />
+          <Parameter Name="ReasonFrequentCaller" Type="bit" Mode="In" />
+          <Parameter Name="ReasonBullying" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPregnancy" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSexuality" Type="bit" Mode="In" />
+          <Parameter Name="ReferRehabilitationCentre" Type="bit" Mode="In" />
+          <Parameter Name="ReasonBorderlinePersonalityDisorder" Type="bit" Mode="In" />
+          <Parameter Name="HelpLine" Type="varchar" Mode="In" />
+          <Parameter Name="ReasonOtherReason" Type="bit" Mode="In" />
+          <Parameter Name="ReasonFollowUp" Type="bit" Mode="In" />
+          <Parameter Name="ReferUniversityStudentWellness" Type="bit" Mode="In" />
+          <Parameter Name="ReferSadagHelpLine" Type="bit" Mode="In" />
+          <Parameter Name="ReferSelfHelp" Type="bit" Mode="In" />
+          <Parameter Name="ReferUber" Type="bit" Mode="In" />
+          <Parameter Name="DLCallTimeOfDay" Type="varchar" Mode="In" />
+          <Parameter Name="CalledOnBehalfOf" Type="varchar" Mode="In" />
+          <Parameter Name="ActionPoints" Type="varchar" Mode="In" />
+          <Parameter Name="ReasonRelationshipRomanticIssues" Type="bit" Mode="In" />
+          <Parameter Name="ReasonRelationshipFamilyIssues" Type="bit" Mode="In" />
+          <Parameter Name="ReferCompanyEAP" Type="bit" Mode="In" />
+          <Parameter Name="ReferUniversitySupportServices" Type="bit" Mode="In" />
+          <Parameter Name="DistressRatingBegining" Type="int" Mode="In" />
+          <Parameter Name="DistressRatingEnd" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreateCaseWrite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Surname" Type="varchar" Mode="In" />
+          <Parameter Name="Age" Type="varchar" Mode="In" />
+          <Parameter Name="Sex" Type="varchar" Mode="In" />
+          <Parameter Name="Race" Type="varchar" Mode="In" />
+          <Parameter Name="Occupation" Type="varchar" Mode="In" />
+          <Parameter Name="MedicalAid" Type="varchar" Mode="In" />
+          <Parameter Name="Medication" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="Province" Type="varchar" Mode="In" />
+          <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+          <Parameter Name="Telephone1" Type="varchar" Mode="In" />
+          <Parameter Name="Telephone2" Type="varchar" Mode="In" />
+          <Parameter Name="EmailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="Suburb" Type="varchar" Mode="In" />
+          <Parameter Name="DLLocation" Type="varchar" Mode="In" />
+          <Parameter Name="DLType" Type="varchar" Mode="In" />
+          <Parameter Name="DLSource" Type="varchar" Mode="In" />
+          <Parameter Name="DLStudentNumber" Type="varchar" Mode="In" />
+          <Parameter Name="Counsellor" Type="varchar" Mode="In" />
+          <Parameter Name="CallDate" Type="datetime" Mode="In" />
+          <Parameter Name="ReasonADHD" Type="bit" Mode="In" />
+          <Parameter Name="ReasonAlzheimersDementia" Type="bit" Mode="In" />
+          <Parameter Name="ReasonAnxiety" Type="bit" Mode="In" />
+          <Parameter Name="ReasonBipolar" Type="bit" Mode="In" />
+          <Parameter Name="ReasonDebtPovertyUnemployment" Type="bit" Mode="In" />
+          <Parameter Name="ReasonDepression" Type="bit" Mode="In" />
+          <Parameter Name="ReasonEatingDisoirder" Type="bit" Mode="In" />
+          <Parameter Name="ReasonHIVAIDS" Type="bit" Mode="In" />
+          <Parameter Name="ReasonInformation" Type="bit" Mode="In" />
+          <Parameter Name="ReasonLossGriefLoneliness" Type="bit" Mode="In" />
+          <Parameter Name="ReasonNone" Type="bit" Mode="In" />
+          <Parameter Name="ReasonOCD" Type="bit" Mode="In" />
+          <Parameter Name="ReasonOtherIllness" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPhysicalEmotionalAbuse" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPostNatalDepression" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPTSDTrauma" Type="bit" Mode="In" />
+          <Parameter Name="ReasonReationshipDomesticAbuse" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSchizophrenia" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSelfMutilation" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSexualAbuseRape" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSleepingDisorder" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSocialPhobia" Type="bit" Mode="In" />
+          <Parameter Name="ReasonStress" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSubstanceAbuse" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSuicide" Type="bit" Mode="In" />
+          <Parameter Name="ReferDASGFaceToFace" Type="bit" Mode="In" />
+          <Parameter Name="ReferGP" Type="bit" Mode="In" />
+          <Parameter Name="ReferGovHospital" Type="bit" Mode="In" />
+          <Parameter Name="ReferLiteratureWebsite" Type="bit" Mode="In" />
+          <Parameter Name="ReferNone" Type="bit" Mode="In" />
+          <Parameter Name="ReferOther" Type="bit" Mode="In" />
+          <Parameter Name="ReferOtherNGOHelpline" Type="bit" Mode="In" />
+          <Parameter Name="ReferPoliceStation" Type="bit" Mode="In" />
+          <Parameter Name="ReferPrivateHospital" Type="bit" Mode="In" />
+          <Parameter Name="ReferPsychiatrist" Type="bit" Mode="In" />
+          <Parameter Name="ReferPsychologist" Type="bit" Mode="In" />
+          <Parameter Name="ReferRapeCrisis" Type="bit" Mode="In" />
+          <Parameter Name="ReferShelter" Type="bit" Mode="In" />
+          <Parameter Name="ReferSocialWorker" Type="bit" Mode="In" />
+          <Parameter Name="ReferSupportGroup" Type="bit" Mode="In" />
+          <Parameter Name="ReferTraumaCentre" Type="bit" Mode="In" />
+          <Parameter Name="CallSummary" Type="varchar" Mode="In" />
+          <Parameter Name="ReasonFrequentCaller" Type="bit" Mode="In" />
+          <Parameter Name="ReasonBullying" Type="bit" Mode="In" />
+          <Parameter Name="ReasonPregnancy" Type="bit" Mode="In" />
+          <Parameter Name="ReasonSexuality" Type="bit" Mode="In" />
+          <Parameter Name="ReferRehabilitationCentre" Type="bit" Mode="In" />
+          <Parameter Name="ReasonBorderlinePersonalityDisorder" Type="bit" Mode="In" />
+          <Parameter Name="HelpLine" Type="varchar" Mode="In" />
+          <Parameter Name="ReasonOtherReason" Type="bit" Mode="In" />
+          <Parameter Name="ReasonFollowUp" Type="bit" Mode="In" />
+          <Parameter Name="ReferUniversityStudentWellness" Type="bit" Mode="In" />
+          <Parameter Name="ReferSadagHelpLine" Type="bit" Mode="In" />
+          <Parameter Name="ReferSelfHelp" Type="bit" Mode="In" />
+          <Parameter Name="ReferUber" Type="bit" Mode="In" />
+          <Parameter Name="DLCallTimeOfDay" Type="varchar" Mode="In" />
+          <Parameter Name="CalledOnBehalfOf" Type="varchar" Mode="In" />
+          <Parameter Name="ActionPoints" Type="varchar" Mode="In" />
+          <Parameter Name="ReasonRelationshipRomanticIssues" Type="bit" Mode="In" />
+          <Parameter Name="ReasonRelationshipFamilyIssues" Type="bit" Mode="In" />
+          <Parameter Name="ReferCompanyEAP" Type="bit" Mode="In" />
+          <Parameter Name="ReferUniversitySupportServices" Type="bit" Mode="In" />
+          <Parameter Name="DistressRatingBegining" Type="int" Mode="In" />
+          <Parameter Name="DistressRatingEnd" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="DAISYModelStoreContainer">
+          <EntitySet Name="Callers" EntityType="Self.Callers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calls" EntityType="Self.Calls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Counsellors" EntityType="Self.Counsellors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DLLocations" EntityType="Self.DLLocations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DLSources" EntityType="Self.DLSources" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DLTimes" EntityType="Self.DLTimes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DLTypes" EntityType="Self.DLTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Helplines" EntityType="Self.Helplines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SQL COMMANDS" EntityType="Self.SQL COMMANDS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DAISYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Caller">
+          <Key>
+            <PropertyRef Name="CALLERID" />
+          </Key>
+          <Property Name="CALLERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Race" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MedicalAid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Medication" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DLLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DLType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DLSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DLStudentNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Call">
+          <Key>
+            <PropertyRef Name="CALLID" />
+          </Key>
+          <Property Name="CALLID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CALLERID" Type="Int32" />
+          <Property Name="Counsellor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CallDate" Type="DateTime" Precision="3" />
+          <Property Name="ReasonADHD" Type="Boolean" />
+          <Property Name="ReasonAlzheimersDementia" Type="Boolean" />
+          <Property Name="ReasonAnxiety" Type="Boolean" />
+          <Property Name="ReasonBipolar" Type="Boolean" />
+          <Property Name="ReasonDebtPovertyUnemployment" Type="Boolean" />
+          <Property Name="ReasonDepression" Type="Boolean" />
+          <Property Name="ReasonEatingDisoirder" Type="Boolean" />
+          <Property Name="ReasonHIVAIDS" Type="Boolean" />
+          <Property Name="ReasonInformation" Type="Boolean" />
+          <Property Name="ReasonLossGriefLoneliness" Type="Boolean" />
+          <Property Name="ReasonNone" Type="Boolean" />
+          <Property Name="ReasonOCD" Type="Boolean" />
+          <Property Name="ReasonOtherIllness" Type="Boolean" />
+          <Property Name="ReasonPhysicalEmotionalAbuse" Type="Boolean" />
+          <Property Name="ReasonPostNatalDepression" Type="Boolean" />
+          <Property Name="ReasonPTSDTrauma" Type="Boolean" />
+          <Property Name="ReasonReationshipDomesticAbuse" Type="Boolean" />
+          <Property Name="ReasonSchizophrenia" Type="Boolean" />
+          <Property Name="ReasonSelfMutilation" Type="Boolean" />
+          <Property Name="ReasonSexualAbuseRape" Type="Boolean" />
+          <Property Name="ReasonSleepingDisorder" Type="Boolean" />
+          <Property Name="ReasonSocialPhobia" Type="Boolean" />
+          <Property Name="ReasonStress" Type="Boolean" />
+          <Property Name="ReasonSubstanceAbuse" Type="Boolean" />
+          <Property Name="ReasonSuicide" Type="Boolean" />
+          <Property Name="ReferDASGFaceToFace" Type="Boolean" />
+          <Property Name="ReferGP" Type="Boolean" />
+          <Property Name="ReferGovHospital" Type="Boolean" />
+          <Property Name="ReferLiteratureWebsite" Type="Boolean" />
+          <Property Name="ReferNone" Type="Boolean" />
+          <Property Name="ReferOther" Type="Boolean" />
+          <Property Name="ReferOtherNGOHelpline" Type="Boolean" />
+          <Property Name="ReferPoliceStation" Type="Boolean" />
+          <Property Name="ReferPrivateHospital" Type="Boolean" />
+          <Property Name="ReferPsychiatrist" Type="Boolean" />
+          <Property Name="ReferPsychologist" Type="Boolean" />
+          <Property Name="ReferRapeCrisis" Type="Boolean" />
+          <Property Name="ReferShelter" Type="Boolean" />
+          <Property Name="ReferSocialWorker" Type="Boolean" />
+          <Property Name="ReferSupportGroup" Type="Boolean" />
+          <Property Name="ReferTraumaCentre" Type="Boolean" />
+          <Property Name="CallSummary" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="ReasonFrequentCaller" Type="Boolean" />
+          <Property Name="ReasonBullying" Type="Boolean" />
+          <Property Name="ReasonPregnancy" Type="Boolean" />
+          <Property Name="ReasonSexuality" Type="Boolean" />
+          <Property Name="ReferRehabilitationCentre" Type="Boolean" />
+          <Property Name="ReasonBorderlinePersonalityDisorder" Type="Boolean" />
+          <Property Name="HelpLine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReasonOtherReason" Type="Boolean" />
+          <Property Name="ReasonFollowUp" Type="Boolean" />
+          <Property Name="ReferUniversityStudentWellness" Type="Boolean" />
+          <Property Name="ReferSadagHelpLine" Type="Boolean" />
+          <Property Name="ReferSelfHelp" Type="Boolean" />
+          <Property Name="ReferUber" Type="Boolean" />
+          <Property Name="DLCallTimeOfDay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CalledOnBehalfOf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActionPoints" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="ReasonRelationshipRomanticIssues" Type="Boolean" />
+          <Property Name="ReasonRelationshipFamilyIssues" Type="Boolean" />
+          <Property Name="ReferCompanyEAP" Type="Boolean" />
+          <Property Name="ReferUniversitySupportServices" Type="Boolean" />
+          <Property Name="DistressRatingBegining" Type="Int32" />
+          <Property Name="DistressRatingEnd" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Counsellor">
+          <Key>
+            <PropertyRef Name="Counsellor1" />
+          </Key>
+          <Property Name="Counsellor1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLLocation">
+          <Key>
+            <PropertyRef Name="Location" />
+          </Key>
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLSource">
+          <Key>
+            <PropertyRef Name="Source" />
+          </Key>
+          <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLTime">
+          <Key>
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DLType">
+          <Key>
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Helpline">
+          <Key>
+            <PropertyRef Name="Helpline1" />
+          </Key>
+          <Property Name="Helpline1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SQL_COMMAND">
+          <Key>
+            <PropertyRef Name="RowNumber" />
+          </Key>
+          <Property Name="RowNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventClass" Type="Int32" />
+          <Property Name="TextData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SPID" Type="Int32" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="BinaryData" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="DAISYEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Callers" EntityType="Self.Caller" />
+          <EntitySet Name="Calls" EntityType="Self.Call" />
+          <EntitySet Name="Counsellors" EntityType="Self.Counsellor" />
+          <EntitySet Name="DLLocations" EntityType="Self.DLLocation" />
+          <EntitySet Name="DLSources" EntityType="Self.DLSource" />
+          <EntitySet Name="DLTimes" EntityType="Self.DLTime" />
+          <EntitySet Name="DLTypes" EntityType="Self.DLType" />
+          <EntitySet Name="Helplines" EntityType="Self.Helpline" />
+          <EntitySet Name="SQL_COMMANDS" EntityType="Self.SQL_COMMAND" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <FunctionImport Name="CreateCaseUpdate">
+            <Parameter Name="CALLERID" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Surname" Mode="In" Type="String" />
+            <Parameter Name="Age" Mode="In" Type="String" />
+            <Parameter Name="Sex" Mode="In" Type="String" />
+            <Parameter Name="Race" Mode="In" Type="String" />
+            <Parameter Name="Occupation" Mode="In" Type="String" />
+            <Parameter Name="MedicalAid" Mode="In" Type="String" />
+            <Parameter Name="Medication" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="Province" Mode="In" Type="String" />
+            <Parameter Name="PostalCode" Mode="In" Type="String" />
+            <Parameter Name="Telephone1" Mode="In" Type="String" />
+            <Parameter Name="Telephone2" Mode="In" Type="String" />
+            <Parameter Name="EmailAddress" Mode="In" Type="String" />
+            <Parameter Name="Suburb" Mode="In" Type="String" />
+            <Parameter Name="DLLocation" Mode="In" Type="String" />
+            <Parameter Name="DLType" Mode="In" Type="String" />
+            <Parameter Name="DLSource" Mode="In" Type="String" />
+            <Parameter Name="DLStudentNumber" Mode="In" Type="String" />
+            <Parameter Name="Counsellor" Mode="In" Type="String" />
+            <Parameter Name="CallDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ReasonADHD" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonAlzheimersDementia" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonAnxiety" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonBipolar" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonDebtPovertyUnemployment" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonDepression" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonEatingDisoirder" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonHIVAIDS" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonInformation" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonLossGriefLoneliness" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonNone" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonOCD" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonOtherIllness" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPhysicalEmotionalAbuse" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPostNatalDepression" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPTSDTrauma" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonReationshipDomesticAbuse" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSchizophrenia" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSelfMutilation" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSexualAbuseRape" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSleepingDisorder" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSocialPhobia" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonStress" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSubstanceAbuse" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSuicide" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferDASGFaceToFace" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferGP" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferGovHospital" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferLiteratureWebsite" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferNone" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferOther" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferOtherNGOHelpline" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPoliceStation" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPrivateHospital" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPsychiatrist" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPsychologist" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferRapeCrisis" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferShelter" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSocialWorker" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSupportGroup" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferTraumaCentre" Mode="In" Type="Boolean" />
+            <Parameter Name="CallSummary" Mode="In" Type="String" />
+            <Parameter Name="ReasonFrequentCaller" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonBullying" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPregnancy" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSexuality" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferRehabilitationCentre" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonBorderlinePersonalityDisorder" Mode="In" Type="Boolean" />
+            <Parameter Name="HelpLine" Mode="In" Type="String" />
+            <Parameter Name="ReasonOtherReason" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonFollowUp" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferUniversityStudentWellness" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSadagHelpLine" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSelfHelp" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferUber" Mode="In" Type="Boolean" />
+            <Parameter Name="DLCallTimeOfDay" Mode="In" Type="String" />
+            <Parameter Name="CalledOnBehalfOf" Mode="In" Type="String" />
+            <Parameter Name="ActionPoints" Mode="In" Type="String" />
+            <Parameter Name="ReasonRelationshipRomanticIssues" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonRelationshipFamilyIssues" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferCompanyEAP" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferUniversitySupportServices" Mode="In" Type="Boolean" />
+            <Parameter Name="DistressRatingBegining" Mode="In" Type="Int32" />
+            <Parameter Name="DistressRatingEnd" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateCaseWrite">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Surname" Mode="In" Type="String" />
+            <Parameter Name="Age" Mode="In" Type="String" />
+            <Parameter Name="Sex" Mode="In" Type="String" />
+            <Parameter Name="Race" Mode="In" Type="String" />
+            <Parameter Name="Occupation" Mode="In" Type="String" />
+            <Parameter Name="MedicalAid" Mode="In" Type="String" />
+            <Parameter Name="Medication" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="Province" Mode="In" Type="String" />
+            <Parameter Name="PostalCode" Mode="In" Type="String" />
+            <Parameter Name="Telephone1" Mode="In" Type="String" />
+            <Parameter Name="Telephone2" Mode="In" Type="String" />
+            <Parameter Name="EmailAddress" Mode="In" Type="String" />
+            <Parameter Name="Suburb" Mode="In" Type="String" />
+            <Parameter Name="DLLocation" Mode="In" Type="String" />
+            <Parameter Name="DLType" Mode="In" Type="String" />
+            <Parameter Name="DLSource" Mode="In" Type="String" />
+            <Parameter Name="DLStudentNumber" Mode="In" Type="String" />
+            <Parameter Name="Counsellor" Mode="In" Type="String" />
+            <Parameter Name="CallDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ReasonADHD" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonAlzheimersDementia" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonAnxiety" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonBipolar" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonDebtPovertyUnemployment" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonDepression" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonEatingDisoirder" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonHIVAIDS" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonInformation" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonLossGriefLoneliness" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonNone" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonOCD" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonOtherIllness" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPhysicalEmotionalAbuse" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPostNatalDepression" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPTSDTrauma" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonReationshipDomesticAbuse" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSchizophrenia" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSelfMutilation" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSexualAbuseRape" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSleepingDisorder" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSocialPhobia" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonStress" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSubstanceAbuse" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSuicide" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferDASGFaceToFace" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferGP" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferGovHospital" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferLiteratureWebsite" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferNone" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferOther" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferOtherNGOHelpline" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPoliceStation" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPrivateHospital" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPsychiatrist" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferPsychologist" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferRapeCrisis" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferShelter" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSocialWorker" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSupportGroup" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferTraumaCentre" Mode="In" Type="Boolean" />
+            <Parameter Name="CallSummary" Mode="In" Type="String" />
+            <Parameter Name="ReasonFrequentCaller" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonBullying" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonPregnancy" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonSexuality" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferRehabilitationCentre" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonBorderlinePersonalityDisorder" Mode="In" Type="Boolean" />
+            <Parameter Name="HelpLine" Mode="In" Type="String" />
+            <Parameter Name="ReasonOtherReason" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonFollowUp" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferUniversityStudentWellness" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSadagHelpLine" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferSelfHelp" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferUber" Mode="In" Type="Boolean" />
+            <Parameter Name="DLCallTimeOfDay" Mode="In" Type="String" />
+            <Parameter Name="CalledOnBehalfOf" Mode="In" Type="String" />
+            <Parameter Name="ActionPoints" Mode="In" Type="String" />
+            <Parameter Name="ReasonRelationshipRomanticIssues" Mode="In" Type="Boolean" />
+            <Parameter Name="ReasonRelationshipFamilyIssues" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferCompanyEAP" Mode="In" Type="Boolean" />
+            <Parameter Name="ReferUniversitySupportServices" Mode="In" Type="Boolean" />
+            <Parameter Name="DistressRatingBegining" Mode="In" Type="Int32" />
+            <Parameter Name="DistressRatingEnd" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DAISYModelStoreContainer" CdmEntityContainer="DAISYEntities">
+          <EntitySetMapping Name="Callers">
+            <EntityTypeMapping TypeName="DAISYModel.Caller">
+              <MappingFragment StoreEntitySet="Callers">
+                <ScalarProperty Name="CALLERID" ColumnName="CALLERID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="MedicalAid" ColumnName="MedicalAid" />
+                <ScalarProperty Name="Medication" ColumnName="Medication" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+                <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="DLLocation" ColumnName="DLLocation" />
+                <ScalarProperty Name="DLType" ColumnName="DLType" />
+                <ScalarProperty Name="DLSource" ColumnName="DLSource" />
+                <ScalarProperty Name="DLStudentNumber" ColumnName="DLStudentNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calls">
+            <EntityTypeMapping TypeName="DAISYModel.Call">
+              <MappingFragment StoreEntitySet="Calls">
+                <ScalarProperty Name="CALLID" ColumnName="CALLID" />
+                <ScalarProperty Name="CALLERID" ColumnName="CALLERID" />
+                <ScalarProperty Name="Counsellor" ColumnName="Counsellor" />
+                <ScalarProperty Name="CallDate" ColumnName="CallDate" />
+                <ScalarProperty Name="ReasonADHD" ColumnName="ReasonADHD" />
+                <ScalarProperty Name="ReasonAlzheimersDementia" ColumnName="ReasonAlzheimersDementia" />
+                <ScalarProperty Name="ReasonAnxiety" ColumnName="ReasonAnxiety" />
+                <ScalarProperty Name="ReasonBipolar" ColumnName="ReasonBipolar" />
+                <ScalarProperty Name="ReasonDebtPovertyUnemployment" ColumnName="ReasonDebtPovertyUnemployment" />
+                <ScalarProperty Name="ReasonDepression" ColumnName="ReasonDepression" />
+                <ScalarProperty Name="ReasonEatingDisoirder" ColumnName="ReasonEatingDisoirder" />
+                <ScalarProperty Name="ReasonHIVAIDS" ColumnName="ReasonHIVAIDS" />
+                <ScalarProperty Name="ReasonInformation" ColumnName="ReasonInformation" />
+                <ScalarProperty Name="ReasonLossGriefLoneliness" ColumnName="ReasonLossGriefLoneliness" />
+                <ScalarProperty Name="ReasonNone" ColumnName="ReasonNone" />
+                <ScalarProperty Name="ReasonOCD" ColumnName="ReasonOCD" />
+                <ScalarProperty Name="ReasonOtherIllness" ColumnName="ReasonOtherIllness" />
+                <ScalarProperty Name="ReasonPhysicalEmotionalAbuse" ColumnName="ReasonPhysicalEmotionalAbuse" />
+                <ScalarProperty Name="ReasonPostNatalDepression" ColumnName="ReasonPostNatalDepression" />
+                <ScalarProperty Name="ReasonPTSDTrauma" ColumnName="ReasonPTSDTrauma" />
+                <ScalarProperty Name="ReasonReationshipDomesticAbuse" ColumnName="ReasonReationshipDomesticAbuse" />
+                <ScalarProperty Name="ReasonSchizophrenia" ColumnName="ReasonSchizophrenia" />
+                <ScalarProperty Name="ReasonSelfMutilation" ColumnName="ReasonSelfMutilation" />
+                <ScalarProperty Name="ReasonSexualAbuseRape" ColumnName="ReasonSexualAbuseRape" />
+                <ScalarProperty Name="ReasonSleepingDisorder" ColumnName="ReasonSleepingDisorder" />
+                <ScalarProperty Name="ReasonSocialPhobia" ColumnName="ReasonSocialPhobia" />
+                <ScalarProperty Name="ReasonStress" ColumnName="ReasonStress" />
+                <ScalarProperty Name="ReasonSubstanceAbuse" ColumnName="ReasonSubstanceAbuse" />
+                <ScalarProperty Name="ReasonSuicide" ColumnName="ReasonSuicide" />
+                <ScalarProperty Name="ReferDASGFaceToFace" ColumnName="ReferDASGFaceToFace" />
+                <ScalarProperty Name="ReferGP" ColumnName="ReferGP" />
+                <ScalarProperty Name="ReferGovHospital" ColumnName="ReferGovHospital" />
+                <ScalarProperty Name="ReferLiteratureWebsite" ColumnName="ReferLiteratureWebsite" />
+                <ScalarProperty Name="ReferNone" ColumnName="ReferNone" />
+                <ScalarProperty Name="ReferOther" ColumnName="ReferOther" />
+                <ScalarProperty Name="ReferOtherNGOHelpline" ColumnName="ReferOtherNGOHelpline" />
+                <ScalarProperty Name="ReferPoliceStation" ColumnName="ReferPoliceStation" />
+                <ScalarProperty Name="ReferPrivateHospital" ColumnName="ReferPrivateHospital" />
+                <ScalarProperty Name="ReferPsychiatrist" ColumnName="ReferPsychiatrist" />
+                <ScalarProperty Name="ReferPsychologist" ColumnName="ReferPsychologist" />
+                <ScalarProperty Name="ReferRapeCrisis" ColumnName="ReferRapeCrisis" />
+                <ScalarProperty Name="ReferShelter" ColumnName="ReferShelter" />
+                <ScalarProperty Name="ReferSocialWorker" ColumnName="ReferSocialWorker" />
+                <ScalarProperty Name="ReferSupportGroup" ColumnName="ReferSupportGroup" />
+                <ScalarProperty Name="ReferTraumaCentre" ColumnName="ReferTraumaCentre" />
+                <ScalarProperty Name="CallSummary" ColumnName="CallSummary" />
+                <ScalarProperty Name="ReasonFrequentCaller" ColumnName="ReasonFrequentCaller" />
+                <ScalarProperty Name="ReasonBullying" ColumnName="ReasonBullying" />
+                <ScalarProperty Name="ReasonPregnancy" ColumnName="ReasonPregnancy" />
+                <ScalarProperty Name="ReasonSexuality" ColumnName="ReasonSexuality" />
+                <ScalarProperty Name="ReferRehabilitationCentre" ColumnName="ReferRehabilitationCentre" />
+                <ScalarProperty Name="ReasonBorderlinePersonalityDisorder" ColumnName="ReasonBorderlinePersonalityDisorder" />
+                <ScalarProperty Name="HelpLine" ColumnName="HelpLine" />
+                <ScalarProperty Name="ReasonOtherReason" ColumnName="ReasonOtherReason" />
+                <ScalarProperty Name="ReasonFollowUp" ColumnName="ReasonFollowUp" />
+                <ScalarProperty Name="ReferUniversityStudentWellness" ColumnName="ReferUniversityStudentWellness" />
+                <ScalarProperty Name="ReferSadagHelpLine" ColumnName="ReferSadagHelpLine" />
+                <ScalarProperty Name="ReferSelfHelp" ColumnName="ReferSelfHelp" />
+                <ScalarProperty Name="ReferUber" ColumnName="ReferUber" />
+                <ScalarProperty Name="DLCallTimeOfDay" ColumnName="DLCallTimeOfDay" />
+                <ScalarProperty Name="CalledOnBehalfOf" ColumnName="CalledOnBehalfOf" />
+                <ScalarProperty Name="ActionPoints" ColumnName="ActionPoints" />
+                <ScalarProperty Name="ReasonRelationshipRomanticIssues" ColumnName="ReasonRelationshipRomanticIssues" />
+                <ScalarProperty Name="ReasonRelationshipFamilyIssues" ColumnName="ReasonRelationshipFamilyIssues" />
+                <ScalarProperty Name="ReferCompanyEAP" ColumnName="ReferCompanyEAP" />
+                <ScalarProperty Name="ReferUniversitySupportServices" ColumnName="ReferUniversitySupportServices" />
+                <ScalarProperty Name="DistressRatingBegining" ColumnName="DistressRatingBegining" />
+                <ScalarProperty Name="DistressRatingEnd" ColumnName="DistressRatingEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Counsellors">
+            <EntityTypeMapping TypeName="DAISYModel.Counsellor">
+              <MappingFragment StoreEntitySet="Counsellors">
+                <ScalarProperty Name="Counsellor1" ColumnName="Counsellor" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DLLocations">
+            <EntityTypeMapping TypeName="DAISYModel.DLLocation">
+              <MappingFragment StoreEntitySet="DLLocations">
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DLSources">
+            <EntityTypeMapping TypeName="DAISYModel.DLSource">
+              <MappingFragment StoreEntitySet="DLSources">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DLTimes">
+            <EntityTypeMapping TypeName="DAISYModel.DLTime">
+              <MappingFragment StoreEntitySet="DLTimes">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DLTypes">
+            <EntityTypeMapping TypeName="DAISYModel.DLType">
+              <MappingFragment StoreEntitySet="DLTypes">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Helplines">
+            <EntityTypeMapping TypeName="DAISYModel.Helpline">
+              <MappingFragment StoreEntitySet="Helplines">
+                <ScalarProperty Name="Helpline1" ColumnName="Helpline" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SQL_COMMANDS">
+            <EntityTypeMapping TypeName="DAISYModel.SQL_COMMAND">
+              <MappingFragment StoreEntitySet="SQL COMMANDS">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="EventClass" ColumnName="EventClass" />
+                <ScalarProperty Name="TextData" ColumnName="TextData" />
+                <ScalarProperty Name="SPID" ColumnName="SPID" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="BinaryData" ColumnName="BinaryData" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="DAISYModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CreateCaseUpdate" FunctionName="DAISYModel.Store.CreateCaseUpdate" />
+          <FunctionImportMapping FunctionImportName="CreateCaseWrite" FunctionName="DAISYModel.Store.CreateCaseWrite" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
