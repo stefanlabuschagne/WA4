@@ -7,18 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication4.Models
+namespace WebApplication4.Models.Db
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class SQL_COMMAND
+    public partial class Helpline
     {
-        public int RowNumber { get; set; }
-        public Nullable<int> EventClass { get; set; }
-        public string TextData { get; set; }
-        public Nullable<int> SPID { get; set; }
-        public Nullable<System.DateTime> StartTime { get; set; }
-        public byte[] BinaryData { get; set; }
+        public string Helpline1 { get; set; }
+        public bool Active { get; set; }
     }
 }

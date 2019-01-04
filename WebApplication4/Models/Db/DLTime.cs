@@ -7,13 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication4.Models
+namespace WebApplication4.Models.Db
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class DLLocation
+    public partial class DLTime
     {
-        public string Location { get; set; }
+        public string Time { get; set; }
     }
 }

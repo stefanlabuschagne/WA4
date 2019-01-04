@@ -7,13 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication4.Models
+namespace WebApplication4.Models.Db
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class DLSource
+    public partial class SQL_COMMAND
     {
-        public string Source { get; set; }
+        public int RowNumber { get; set; }
+        public Nullable<int> EventClass { get; set; }
+        public string TextData { get; set; }
+        public Nullable<int> SPID { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public byte[] BinaryData { get; set; }
     }
 }

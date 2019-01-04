@@ -7,14 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication4.Models
+namespace WebApplication4.Models.Db
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Helpline
+    public partial class DLSource
     {
-        public string Helpline1 { get; set; }
-        public bool Active { get; set; }
+        public string Source { get; set; }
     }
 }

@@ -317,9 +317,6 @@ warning 6002: The table/view 'DAISY.sys.database_firewall_rules' does not have a
           <Property Name="create_date" Type="datetime" Nullable="false" />
           <Property Name="modify_date" Type="datetime" Nullable="false" />
         </EntityType>
-        <Function Name="CamelCase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
-          <Parameter Name="Str" Type="varchar" Mode="In" />
-        </Function>
         <Function Name="CreateCaseUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CALLERID" Type="int" Mode="In" />
           <Parameter Name="Name" Type="varchar" Mode="In" />
