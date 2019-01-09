@@ -140,11 +140,6 @@ namespace WebApplication4.Controllers
   //          Nullable<bool> reasonRelationshipFamilyIssues, Nullable<bool> referCompanyEAP, Nullable<bool> 
   //          referUniversitySupportServices, Nullable<int> distressRatingBegining, Nullable<int> distressRatingEnd)
 
-
-
-
-
-
                 DaContext.SaveChanges();
             
                 return RedirectToAction("Index");
@@ -170,5 +165,29 @@ namespace WebApplication4.Controllers
 
             return View();
         }
+
+
+
+        // Controller text for AJAX
+        // THIS QUERIOES TEH DATABASE VIA ENTITY FRAMEWORK 
+        // AND RETURNS A LIST OF COUNSELLORS for the UI DROPDOWN
+        public JsonResult ReturnJSONDataToAJax() //It will be fired from Jquery ajax call  
+        {
+            var DaContext = new WebApplication4.Models.Db.DAISYEntities();
+
+            // LAMBDA EXPRESSION FILTERS ON THE ACTIVE ONES ONLY -> THIS WORKS
+            // https://stackoverflow.com/questions/16185514/linq-query-or-lambda-expression
+
+            var jsonData = DaContext.Counsellors.Where(c=> c.Active == true).ToList();
+
+            // jsonData[1].Active
+
+            return Json(jsonData, JsonRequestBehavior.AllowGet);  
+
+        } 
+
+
+
+
     }
 }
