@@ -47,10 +47,11 @@ namespace WebApplication4.UIModels
         // public CaseNormal { get; set; }
 
 
-        [Required, Display(Name = "The First Name")]
+        [Required, Display(Name = "First Name")]
         public string Name { get; set; }
-        [Required]
+        [Required, Display(Name = "First Name")]
         public string Surname { get; set; }
+
         public string Age { get; set; }
 
         [Required, Display(Name = "Gender")]
@@ -71,7 +72,11 @@ namespace WebApplication4.UIModels
         [Required]
         public string Telephone1 { get; set; }
         public string Telephone2 { get; set; }
+
+        [Required, Display(Name = "E-Mail"), EmailAddress]
         public string EmailAddress { get; set; }
+
+
         public string Suburb { get; set; }
         public string DLLocation { get; set; }
         public string DLType { get; set; }
@@ -81,79 +86,89 @@ namespace WebApplication4.UIModels
         [Required]
         public string Counsellor { get; set; }
 
+        // DatePicker on UI
+        [Required]
         public Nullable<System.DateTime> CallDate { get; set; }
 
-        public Nullable<bool> ReasonADHD { get; set; }
-        public Nullable<bool> ReasonAlzheimersDementia { get; set; }
-        public Nullable<bool> ReasonAnxiety { get; set; }
-        public Nullable<bool> ReasonBipolar { get; set; }
-        public Nullable<bool> ReasonDebtPovertyUnemployment { get; set; }
-        public Nullable<bool> ReasonDepression { get; set; }
-        public Nullable<bool> ReasonEatingDisoirder { get; set; }
-        public Nullable<bool> ReasonHIVAIDS { get; set; }
-        public Nullable<bool> ReasonInformation { get; set; }
-        public Nullable<bool> ReasonLossGriefLoneliness { get; set; }
-        public Nullable<bool> ReasonNone { get; set; }
-        public Nullable<bool> ReasonOCD { get; set; }
-        public Nullable<bool> ReasonOtherIllness { get; set; }
-        public Nullable<bool> ReasonPhysicalEmotionalAbuse { get; set; }
-        public Nullable<bool> ReasonPostNatalDepression { get; set; }
-        public Nullable<bool> ReasonPTSDTrauma { get; set; }
-        public Nullable<bool> ReasonReationshipDomesticAbuse { get; set; }
-        public Nullable<bool> ReasonSchizophrenia { get; set; }
-        public Nullable<bool> ReasonSelfMutilation { get; set; }
-        public Nullable<bool> ReasonSexualAbuseRape { get; set; }
-        public Nullable<bool> ReasonSleepingDisorder { get; set; }
-        public Nullable<bool> ReasonSocialPhobia { get; set; }
-        public Nullable<bool> ReasonStress { get; set; }
-        public Nullable<bool> ReasonSubstanceAbuse { get; set; }
-        public Nullable<bool> ReasonSuicide { get; set; }
-        public Nullable<bool> ReferDASGFaceToFace { get; set; }
-        public Nullable<bool> ReferGP { get; set; }
-        public Nullable<bool> ReferGovHospital { get; set; }
-        public Nullable<bool> ReferLiteratureWebsite { get; set; }
-        public Nullable<bool> ReferNone { get; set; }
-        public Nullable<bool> ReferOther { get; set; }
-        public Nullable<bool> ReferOtherNGOHelpline { get; set; }
-        public Nullable<bool> ReferPoliceStation { get; set; }
-        public Nullable<bool> ReferPrivateHospital { get; set; }
-        public Nullable<bool> ReferPsychiatrist { get; set; }
-        public Nullable<bool> ReferPsychologist { get; set; }
-        public Nullable<bool> ReferRapeCrisis { get; set; }
-        public Nullable<bool> ReferShelter { get; set; }
-        public Nullable<bool> ReferSocialWorker { get; set; }
-        public Nullable<bool> ReferSupportGroup { get; set; }
-        public Nullable<bool> ReferTraumaCentre { get; set; }
+        public bool ReasonADHD { get; set; }
+        public bool  ReasonAlzheimersDementia { get; set; }
+        public bool  ReasonAnxiety { get; set; }
+        public bool  ReasonBipolar { get; set; }
+        public bool  ReasonDebtPovertyUnemployment { get; set; }
+        public bool  ReasonDepression { get; set; }
+        public bool  ReasonEatingDisoirder { get; set; }
+        public bool  ReasonHIVAIDS { get; set; }
+        public bool  ReasonInformation { get; set; }
+        public bool  ReasonLossGriefLoneliness { get; set; }
+        public bool  ReasonNone { get; set; }
+        public bool  ReasonOCD { get; set; }
+        public bool  ReasonOtherIllness { get; set; }
+        public bool  ReasonPhysicalEmotionalAbuse { get; set; }
+        public bool  ReasonPostNatalDepression { get; set; }
+        public bool  ReasonPTSDTrauma { get; set; }
+        public bool  ReasonReationshipDomesticAbuse { get; set; }
+        public bool  ReasonSchizophrenia { get; set; }
+        public bool  ReasonSelfMutilation { get; set; }
+        public bool  ReasonSexualAbuseRape { get; set; }
+        public bool  ReasonSleepingDisorder { get; set; }
+        public bool  ReasonSocialPhobia { get; set; }
+        public bool  ReasonStress { get; set; }
+        public bool  ReasonSubstanceAbuse { get; set; }
+        public bool  ReasonSuicide { get; set; }
+        public bool  ReferDASGFaceToFace { get; set; }
+        public bool  ReferGP { get; set; }
+        public bool  ReferGovHospital { get; set; }
+        public bool  ReferLiteratureWebsite { get; set; }
+        public bool  ReferNone { get; set; }
+        public bool  ReferOther { get; set; }
+        public bool  ReferOtherNGOHelpline { get; set; }
+        public bool  ReferPoliceStation { get; set; }
+        public bool  ReferPrivateHospital { get; set; }
+        public bool  ReferPsychiatrist { get; set; }
+        public bool  ReferPsychologist { get; set; }
+        public bool  ReferRapeCrisis { get; set; }
+        public bool  ReferShelter { get; set; }
+        public bool  ReferSocialWorker { get; set; }
+        public bool  ReferSupportGroup { get; set; }
+        public bool  ReferTraumaCentre { get; set; }
 
         [Required]
         public string CallSummary { get; set; }
 
-        public Nullable<bool> ReasonFrequentCaller { get; set; }
-        public Nullable<bool> ReasonBullying { get; set; }
-        public Nullable<bool> ReasonPregnancy { get; set; }
-        public Nullable<bool> ReasonSexuality { get; set; }
-        public Nullable<bool> ReferRehabilitationCentre { get; set; }
-        public Nullable<bool> ReasonBorderlinePersonalityDisorder { get; set; }
+        public bool  ReasonFrequentCaller { get; set; }
+        public bool  ReasonBullying { get; set; }
+        public bool  ReasonPregnancy { get; set; }
+        public bool  ReasonSexuality { get; set; }
+        public bool  ReferRehabilitationCentre { get; set; }
+        public bool  ReasonBorderlinePersonalityDisorder { get; set; }
         public string HelpLine { get; set; }
-        public Nullable<bool> ReasonOtherReason { get; set; }
-        public Nullable<bool> ReasonFollowUp { get; set; }
-        public Nullable<bool> ReferUniversityStudentWellness { get; set; }
-        public Nullable<bool> ReferSadagHelpLine { get; set; }
-        public Nullable<bool> ReferSelfHelp { get; set; }
-        public Nullable<bool> ReferUber { get; set; }
+        public bool  ReasonOtherReason { get; set; }
+        public bool  ReasonFollowUp { get; set; }
+        public bool  ReferUniversityStudentWellness { get; set; }
+        public bool  ReferSadagHelpLine { get; set; }
+        public bool  ReferSelfHelp { get; set; }
+        public bool  ReferUber { get; set; }
+
+        // Dropdown
         public string DLCallTimeOfDay { get; set; }
+
+        // Dropdown 
         public string CalledOnBehalfOf { get; set; }
+
+
+        [Required, MinLength(100)]
         public string ActionPoints { get; set; }
-        public Nullable<bool> ReasonRelationshipRomanticIssues { get; set; }
-        public Nullable<bool> ReasonRelationshipFamilyIssues { get; set; }
-        public Nullable<bool> ReferCompanyEAP { get; set; }
-        public Nullable<bool> ReferUniversitySupportServices { get; set; }
 
-        [Required, DefaultValue(3)]
-        public Nullable<int> DistressRatingBegining { get; set; }
+        public bool  ReasonRelationshipRomanticIssues { get; set; }
+        public bool  ReasonRelationshipFamilyIssues { get; set; }
+        public bool  ReferCompanyEAP { get; set; }
+        public bool  ReferUniversitySupportServices { get; set; }
 
-        [Required, DefaultValue(3)]
-        public Nullable<int> DistressRatingEnd { get; set; }
+        [Required, DefaultValue(3),Range(1,5)]
+        public int DistressRatingBegining { get; set; }
+
+        [Required, DefaultValue(3),Range(1,5)]
+        public int DistressRatingEnd { get; set; }
 
     }
 
