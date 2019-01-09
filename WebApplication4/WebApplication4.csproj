@@ -148,9 +148,6 @@
     <Compile Include="Models\Db\Counsellor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Db\database_firewall_rules.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Db\DLLocation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2b9a66da2b13439192c883c209ced88c" Name="Diagram1">
+      <Diagram DiagramId="8acf55bcb3414f5fb9e90eaa35df8b2a" Name="Diagram1">
         <EntityTypeShape EntityType="DAISYModel.Caller" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DAISYModel.Call" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DAISYModel.Counsellor" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="DAISYModel.DLType" Width="1.5" PointX="6.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DAISYModel.Helpline" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DAISYModel.SQL_COMMAND" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DAISYModel.database_firewall_rules" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

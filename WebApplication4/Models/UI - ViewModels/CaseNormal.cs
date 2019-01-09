@@ -24,8 +24,12 @@ namespace WebApplication4.UIModels
     { }
 
 
+
+    // THE CLASSNAME CANNOT BE THE SAME AS THE EF CLASSES IN THE SAME ASSEMBLY (Webapplication4)
+    // TO RESOLVE THIS, WE NEED TO CEEATE A SEPARATE ASSEMBLY (Destop Application for the DATABASE MODELS in ENTITY FRAMEWORK)
+    // Or Hack it this way.
     // This is for adding and editing a Counsellor
-    public class Counsellor
+    public class CounsellorUI
     {
         [Required, MinLength(6)]
         public string Counsellor1 { get; set; }  // Because it cant be the same as the Classname
