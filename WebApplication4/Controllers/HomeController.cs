@@ -202,5 +202,24 @@ namespace WebApplication4.Controllers
         }
 
 
+
+        public JsonResult ReturnJSONCallTimeOfDayDataToAJax() //It will be fired from Jquery ajax call  
+        {
+            var DaContext = new WebApplication4.Models.Db.DAISYEntities();
+
+            // LAMBDA EXPRESSION FILTERS ON THE ACTIVE ONES ONLY -> THIS WORKS
+            // https://stackoverflow.com/questions/16185514/linq-query-or-lambda-expression
+
+            var jsonData = DaContext.DLTimes.ToList();
+
+            // jsonData[1].Helpline1
+
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
+
+        }
+
+
+
+
     }
 }

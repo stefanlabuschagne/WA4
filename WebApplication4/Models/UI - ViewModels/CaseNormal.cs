@@ -152,7 +152,11 @@ namespace WebApplication4.UIModels
         public bool  ReasonSexuality { get; set; }
         public bool  ReferRehabilitationCentre { get; set; }
         public bool  ReasonBorderlinePersonalityDisorder { get; set; }
+
+        [Required]
         public string HelpLine { get; set; }
+
+
         public bool  ReasonOtherReason { get; set; }
         public bool  ReasonFollowUp { get; set; }
         public bool  ReferUniversityStudentWellness { get; set; }
@@ -161,6 +165,7 @@ namespace WebApplication4.UIModels
         public bool  ReferUber { get; set; }
 
         // Dropdown
+        [Required]
         public string DLCallTimeOfDay { get; set; }
 
         // Dropdown 
