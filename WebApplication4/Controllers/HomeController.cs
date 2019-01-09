@@ -167,11 +167,10 @@ namespace WebApplication4.Controllers
         }
 
 
-
         // Controller text for AJAX
         // THIS QUERIOES TEH DATABASE VIA ENTITY FRAMEWORK 
         // AND RETURNS A LIST OF COUNSELLORS for the UI DROPDOWN
-        public JsonResult ReturnJSONDataToAJax() //It will be fired from Jquery ajax call  
+        public JsonResult ReturnJSONCounsellorDataToAJax() //It will be fired from Jquery ajax call  
         {
             var DaContext = new WebApplication4.Models.Db.DAISYEntities();
 
@@ -184,9 +183,23 @@ namespace WebApplication4.Controllers
 
             return Json(jsonData, JsonRequestBehavior.AllowGet);  
 
-        } 
+        }
 
 
+        public JsonResult ReturnJSONHelplineDataToAJax() //It will be fired from Jquery ajax call  
+        {
+            var DaContext = new WebApplication4.Models.Db.DAISYEntities();
+
+            // LAMBDA EXPRESSION FILTERS ON THE ACTIVE ONES ONLY -> THIS WORKS
+            // https://stackoverflow.com/questions/16185514/linq-query-or-lambda-expression
+
+            var jsonData = DaContext.Helplines.Where(c=>c.Active==true).ToList();
+
+            // jsonData[1].Helpline1
+
+            return Json(jsonData, JsonRequestBehavior.AllowGet);
+
+        }
 
 
     }

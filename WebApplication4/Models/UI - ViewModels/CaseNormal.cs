@@ -49,9 +49,10 @@ namespace WebApplication4.UIModels
 
         [Required, Display(Name = "First Name")]
         public string Name { get; set; }
-        [Required, Display(Name = "First Name")]
+        [Required, Display(Name = "SurName")]
         public string Surname { get; set; }
 
+        [Display(Name="Age Group")]
         public string Age { get; set; }
 
         [Required, Display(Name = "Gender")]
@@ -59,10 +60,16 @@ namespace WebApplication4.UIModels
 
         [Required]
         public string Race { get; set; }
+
         public string Occupation { get; set; }
         public string MedicalAid { get; set; }
+
         public string Medication { get; set; }
+
+
         public string Address { get; set; }
+
+
         public string City { get; set; }
 
 
@@ -78,9 +85,13 @@ namespace WebApplication4.UIModels
 
 
         public string Suburb { get; set; }
+
         public string DLLocation { get; set; }
+
         public string DLType { get; set; }
+
         public string DLSource { get; set; }
+
         public string DLStudentNumber { get; set; }
 
         [Required]
@@ -132,7 +143,7 @@ namespace WebApplication4.UIModels
         public bool  ReferSupportGroup { get; set; }
         public bool  ReferTraumaCentre { get; set; }
 
-        [Required]
+        [Required, MaxLength(2000)]
         public string CallSummary { get; set; }
 
         public bool  ReasonFrequentCaller { get; set; }
