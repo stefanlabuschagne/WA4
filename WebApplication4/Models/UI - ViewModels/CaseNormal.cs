@@ -49,7 +49,8 @@ namespace WebApplication4.UIModels
 
         [Required, Display(Name = "First Name")]
         public string Name { get; set; }
-        [Required, Display(Name = "SurName")]
+
+        [Required, Display(Name = "Surname")]
         public string Surname { get; set; }
 
         [Display(Name="Age Group")]
