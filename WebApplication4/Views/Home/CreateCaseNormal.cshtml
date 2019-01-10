@@ -37,7 +37,6 @@
                 new SelectListItem {             Text = "Black", Value = "Black"         },
                 new SelectListItem {             Text = "Caucasian", Value = "Caucasian"         },
                 new SelectListItem {             Text = "Coloured", Value = "Coloured"         },
-
                 new SelectListItem {             Text = "Indian", Value = "Indian"         },
                 new SelectListItem {             Text = "Male", Value = "Male"         },
                 new SelectListItem {             Text = "Other", Value = "Other"         },
@@ -52,9 +51,10 @@
     List<SelectListItem> YNU = new List<SelectListItem>()
             {
 
+                new SelectListItem {             Text = "Unknown", Value = "U"         },
                 new SelectListItem {             Text = "Yes", Value = "Y"         },
                 new SelectListItem {             Text = "No", Value = "N"         },
-                new SelectListItem {             Text = "Unknown", Value = "U"         },
+
 
             };
 
@@ -92,6 +92,17 @@
     // Add This to The Viewbag that is available in the VIEW
     ViewBag.CalledOnBehalfOf = CalledonBehalfOf;
 
+    List<SelectListItem> CallTimeOfDay = new List<SelectListItem>()
+    {
+                new SelectListItem {             Text = "", Value = ""         },
+                new SelectListItem {             Text = "4pm - 8pm", Value = "4pm - 8pm"         },
+                new SelectListItem {             Text = "8am - 12pm", Value = "8am - 12pm"         },
+                new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"         },
+    };
+
+    // Add This to The Viewbag that is available in the VIEW
+    ViewBag.CallTimeOfDay = CallTimeOfDay;
+
 
 
 
@@ -127,11 +138,11 @@
 
     @* TIME OF DAY*@
 
-    @* <!-- LOADED WITH AJAX FROM THE DATABASE-->> *@
+    @* <!-- LOADED WITH HARDCODED VALUES FOR NORMAL CREATE CASE-->> *@
     <div class="form-group">
         @Html.LabelFor(model => model.DLCallTimeOfDay, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(Model => Model.DLCallTimeOfDay, new SelectList(Enumerable.Empty<SelectListItem>()), new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(Model => Model.DLCallTimeOfDay, (IEnumerable<SelectListItem>)ViewBag.CallTimeOfDay, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.DLCallTimeOfDay, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -926,18 +937,19 @@
             });
 
 
-            $.ajax({
-                url: "ReturnJSONCallTimeOfDayDataToAJax",
-                type: "GET",
-                contentType: "application/json; charset=utf-8",
-                datatype: JSON,
-                success: function (result) {
-                    $(result).each(function () {
-                        $("#DLCallTimeOfDay").append($("<option></option>").val(this.Time).html(this.Time));
-                    });
-                },
-                error: function (data) { }
-            });
+            // Maybe this can work for Dedicated Lines.
+            //$.ajax({
+            //    url: "ReturnJSONCallTimeOfDayDataToAJax",
+            //    type: "GET",
+            //    contentType: "application/json; charset=utf-8",
+            //    datatype: JSON,
+            //    success: function (result) {
+            //        $(result).each(function () {
+            //            $("#DLCallTimeOfDay").append($("<option></option>").val(this.Time).html(this.Time));
+            //        });
+            //    },
+            //    error: function (data) { }
+            //});
 
 
 
