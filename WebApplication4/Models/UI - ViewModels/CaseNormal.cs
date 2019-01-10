@@ -102,6 +102,8 @@ namespace WebApplication4.UIModels
         public Nullable<System.DateTime> CallDate { get; set; }
 
         public bool ReasonADHD { get; set; }
+
+        [Required]
         public bool  ReasonAlzheimersDementia { get; set; }
         public bool  ReasonAnxiety { get; set; }
         public bool  ReasonBipolar { get; set; }
@@ -169,10 +171,15 @@ namespace WebApplication4.UIModels
         public string DLCallTimeOfDay { get; set; }
 
         // Dropdown 
+        [Required]
         public string CalledOnBehalfOf { get; set; }
 
 
-        [Required, MinLength(100)]
+        [Required, MinLength(100), DefaultValue("1." +
+            "2." +
+            "3." +
+            "4." +
+            "5.")]
         public string ActionPoints { get; set; }
 
         public bool  ReasonRelationshipRomanticIssues { get; set; }
