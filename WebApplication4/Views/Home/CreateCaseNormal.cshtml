@@ -103,10 +103,6 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
     // Add This to The Viewbag that is available in the VIEW
     ViewBag.CallTimeOfDay = CallTimeOfDay;
 
-
-
-
-
 }
 
 <h2>Create Case HW</h2>
@@ -129,7 +125,7 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
             <div class="col-md-10">
 
                 <!-- This dropdown is loaded by an AJAX CALL! -->
-                <!-- This is Item called "Counsellor"as it is linked to teh Model -->
+                <!-- This is Item called "Counsellor"as it is linked to the Model -->
                 @Html.DropDownListFor(Model => Model.Counsellor, new SelectList(Enumerable.Empty<SelectListItem>()), new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Counsellor, "", new { @class = "text-danger" })
 
@@ -175,7 +171,7 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
         @* // CALL DATE*@
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.CallDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CallDate, new { htmlAttributes = new { @class = "form-control" } })
@@ -185,7 +181,7 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
                 @Html.ValidationMessageFor(model => model.CallDate, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
 
         <h1> Caller Infromation </h1>
@@ -903,27 +899,34 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
     @Scripts.Render("~/bundles/jqueryval")
 
 
-
-
-
 }
-
-
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
 
+    // alert('Here');
+
+    window.addEventListener('load', function () {
+
+        // alert('Window ONLOAD!');
+
+    })
+
     $(document).ready(function () {
 
 
-        // $(".datepicker").datetimepicker();
-
-        // $(".datepicker").datepicker();
-
-        // https://stackoverflow.com/questions/34710319/add-bootstrap-jquery-datepicker-to-mvc-5-razor-view
+        // alert('doc Ready 1');
 
 
-        alert('doc Ready');
+    //    // https://stackoverflow.com/questions/34710319/add-bootstrap-jquery-datepicker-to-mvc-5-razor-view
+
+
+    //    alert('doc Ready 2');
+
+
+        // THIS IS JQUERY AJAX
+        // http://api.jquery.com/jquery.ajax/
+
 
         $.ajax({
             url: "ReturnJSONCounsellorDataToAJax",
@@ -935,7 +938,40 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
                     $("#Counsellor").append($("<option></option>").val(this.Counsellor1).html(this.Counsellor1));
                 });
             },
-            error: function (data) { }
+            error: function (data) {
+                alert('Counsellor Loading Error!')
+            },
+            complete: function (IQJXR, daStatus) {
+                alert('Counsellor Loading Complete');
+            },
+            beforeSend: function (daP1, daP2, daP3) {
+                alert('Counsellor Before Send');
+            }
+
+        });
+
+        
+        //<form action="/Home/CreateCaseNormal" method="post">
+
+        $('#form').submit(function () {
+
+            // Do the submit with an Ajax function
+            // so we can update a spinner :)
+
+
+
+            alert('Submitting Form');
+
+
+
+            // $.ajax({
+
+
+
+            // });
+
+
+
         });
 
 
@@ -972,13 +1008,21 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
         // alert('here 1');
         // Focus on the first Text Field.
+
         document.getElementById("Counsellor").focus();
+
         // alert('here 2');
 
 
-
+    //    $(#Counsellor)[0].focus();
+    //    alert('here 3');
 
 
     });
+
+
+
+
+
 </script>
 
