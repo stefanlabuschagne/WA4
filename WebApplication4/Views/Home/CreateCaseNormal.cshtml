@@ -171,17 +171,17 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
         @* // CALL DATE*@
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.CallDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CallDate, new { htmlAttributes = new { @class = "form-control" } })
 
-                @Html.EditorFor(model => model.CallDate, new { @class = "form-control datepicker", @id = "datepicker" })
+@*                @Html.EditorFor(model => model.CallDate, new { @class = "form-control datepicker", @id = "datepicker" })   *@
 
 
                 @Html.ValidationMessageFor(model => model.CallDate, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
 
         <h1> Caller Infromation </h1>
@@ -1058,6 +1058,11 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
                             .fadeIn(1500, function () {
                                 $('#message').append("<img id='checkmark' src='images/ok.png' />");
                             });
+                    },
+                    error: function (jqxhr,textStatus,errorThrown) {
+                        alert('ajax failed!');
+                        alert(textStatus);
+                        alert(errorThrown);
                     }
                 });
 

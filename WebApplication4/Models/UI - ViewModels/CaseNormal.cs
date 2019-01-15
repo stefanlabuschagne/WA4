@@ -46,7 +46,6 @@ namespace WebApplication4.UIModels
 
         // public CaseNormal { get; set; }
 
-
         [Required, Display(Name = "First Name:"), MaxLength(100)]
         public string Name { get; set; }
 
@@ -71,9 +70,7 @@ namespace WebApplication4.UIModels
         [Display(Name = "Medication:")]
         public string Medication { get; set; }
 
-
         public string Address { get; set; }
-
 
         public string City { get; set; }
 
@@ -95,7 +92,6 @@ namespace WebApplication4.UIModels
 
         public string DLLocation { get; set; }
 
-
         public string DLType { get; set; }
 
         public string DLSource { get; set; }
@@ -108,6 +104,7 @@ namespace WebApplication4.UIModels
         // DatePicker on UI
         [Required]
         public Nullable<System.DateTime> CallDate { get; set; }
+        // public Nullable<System.DateTime> CallDate { get; set; } = DateTime.Now;
 
         [Display(Name = "ADHD")]
         public bool ReasonADHD { get; set; }

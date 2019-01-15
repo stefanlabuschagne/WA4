@@ -30,6 +30,9 @@ namespace WebApplication4.Controllers
         public ActionResult CreateCaseNormal(WebApplication4.UIModels.CaseNormal model)
         {
 
+            // Unitil we have picked the right Day from teh screen.
+            // model.CallDate = DateTime.Today;
+
             if (ModelState.IsValid)
             {
 
@@ -132,29 +135,37 @@ namespace WebApplication4.Controllers
                     model.DistressRatingEnd
                     );
 
-  //      public virtual int CreateCaseWrite(string name, string surname, string age, string sex, string race, string occupation, string medicalAid, string medication, string address, string city, string province, string postalCode, string telephone1, string telephone2, string emailAddress, string suburb, string dLLocation, string dLType, string dLSource, string dLStudentNumber, string counsellor, Nullable<System.DateTime> callDate, Nullable<bool> reasonADHD, Nullable<bool> reasonAlzheimersDementia, Nullable<bool> reasonAnxiety, Nullable<bool> reasonBipolar, Nullable<bool> reasonDebtPovertyUnemployment, Nullable<bool> reasonDepression, Nullable<bool> reasonEatingDisoirder, Nullable<bool> reasonHIVAIDS, Nullable<bool> reasonInformation, Nullable<bool> reasonLossGriefLoneliness, Nullable<bool> reasonNone, Nullable<bool> reasonOCD, Nullable<bool> reasonOtherIllness, Nullable<bool> reasonPhysicalEmotionalAbuse, Nullable<bool> reasonPostNatalDepression, Nullable<bool> reasonPTSDTrauma, Nullable<bool> reasonReationshipDomesticAbuse, Nullable<bool> reasonSchizophrenia, Nullable<bool> reasonSelfMutilation, Nullable<bool> reasonSexualAbuseRape, Nullable<bool> reasonSleepingDisorder, Nullable<bool> reasonSocialPhobia, Nullable<bool> reasonStress, Nullable<bool> reasonSubstanceAbuse, Nullable<bool> reasonSuicide, Nullable<bool> referDASGFaceToFace, Nullable<bool> referGP, Nullable<bool> referGovHospital, Nullable<bool> referLiteratureWebsite, Nullable<bool> referNone, Nullable<bool> referOther, Nullable<bool> referOtherNGOHelpline, Nullable<bool> 
-  //          , Nullable<bool> , Nullable<bool> referTraumaCentre, string callSummary, Nullable<bool> reasonFrequentCaller, Nullable<bool> reasonBullying, Nullable<bool> 
-  //          reasonPregnancy, Nullable<bool> reasonSexuality, Nullable<bool> 
-  //          referRehabilitationCentre, Nullable<bool> 
-  //          , string helpLine, Nullable<bool> reasonOtherReason, Nullable<bool> 
-  //          reasonFollowUp, Nullable<bool> referUniversityStudentWellness, Nullable<bool> referSadagHelpLine, Nullable<bool> 
-  //          referSelfHelp, Nullable<bool> referUber, string 
-            
-            
-  //dLCallTimeOfDay, string , string actionPoints, Nullable<bool> reasonRelationshipRomanticIssues, 
-  //          Nullable<bool> reasonRelationshipFamilyIssues, Nullable<bool> referCompanyEAP, Nullable<bool> 
-  //          referUniversitySupportServices, Nullable<int> distressRatingBegining, Nullable<int> distressRatingEnd)
+                //      public virtual int CreateCaseWrite(string name, string surname, string age, string sex, string race, string occupation, string medicalAid, string medication, string address, string city, string province, string postalCode, string telephone1, string telephone2, string emailAddress, string suburb, string dLLocation, string dLType, string dLSource, string dLStudentNumber, string counsellor, Nullable<System.DateTime> callDate, Nullable<bool> reasonADHD, Nullable<bool> reasonAlzheimersDementia, Nullable<bool> reasonAnxiety, Nullable<bool> reasonBipolar, Nullable<bool> reasonDebtPovertyUnemployment, Nullable<bool> reasonDepression, Nullable<bool> reasonEatingDisoirder, Nullable<bool> reasonHIVAIDS, Nullable<bool> reasonInformation, Nullable<bool> reasonLossGriefLoneliness, Nullable<bool> reasonNone, Nullable<bool> reasonOCD, Nullable<bool> reasonOtherIllness, Nullable<bool> reasonPhysicalEmotionalAbuse, Nullable<bool> reasonPostNatalDepression, Nullable<bool> reasonPTSDTrauma, Nullable<bool> reasonReationshipDomesticAbuse, Nullable<bool> reasonSchizophrenia, Nullable<bool> reasonSelfMutilation, Nullable<bool> reasonSexualAbuseRape, Nullable<bool> reasonSleepingDisorder, Nullable<bool> reasonSocialPhobia, Nullable<bool> reasonStress, Nullable<bool> reasonSubstanceAbuse, Nullable<bool> reasonSuicide, Nullable<bool> referDASGFaceToFace, Nullable<bool> referGP, Nullable<bool> referGovHospital, Nullable<bool> referLiteratureWebsite, Nullable<bool> referNone, Nullable<bool> referOther, Nullable<bool> referOtherNGOHelpline, Nullable<bool> 
+                //          , Nullable<bool> , Nullable<bool> referTraumaCentre, string callSummary, Nullable<bool> reasonFrequentCaller, Nullable<bool> reasonBullying, Nullable<bool> 
+                //          reasonPregnancy, Nullable<bool> reasonSexuality, Nullable<bool> 
+                //          referRehabilitationCentre, Nullable<bool> 
+                //          , string helpLine, Nullable<bool> reasonOtherReason, Nullable<bool> 
+                //          reasonFollowUp, Nullable<bool> referUniversityStudentWellness, Nullable<bool> referSadagHelpLine, Nullable<bool> 
+                //          referSelfHelp, Nullable<bool> referUber, string 
+
+
+                //dLCallTimeOfDay, string , string actionPoints, Nullable<bool> reasonRelationshipRomanticIssues, 
+                //          Nullable<bool> reasonRelationshipFamilyIssues, Nullable<bool> referCompanyEAP, Nullable<bool> 
+                //          referUniversitySupportServices, Nullable<int> distressRatingBegining, Nullable<int> distressRatingEnd)
 
                 DaContext.SaveChanges();
-            
+
                 return RedirectToAction("Index");
             }
+            else
+            {
+                // MODELSLATE INVALID - SO SOMETING SUBMITTED WAS WRONG! (CALLDATE?)
+
+                int i = 0;
+                
+            }
+
+
+
 
             return View();
 
         }
-
-
 
 
         public ActionResult About()
