@@ -906,27 +906,31 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
     // alert('Here');
 
-    window.addEventListener('load', function () {
+    //window.addEventListener('load', function () {
 
-        // alert('Window ONLOAD!');
+    //    // alert('Window ONLOAD!');
 
-    })
+    //})
+
 
     $(document).ready(function () {
 
 
-        // alert('doc Ready 1');
+    //    // alert('doc Ready 1');
 
 
-    //    // https://stackoverflow.com/questions/34710319/add-bootstrap-jquery-datepicker-to-mvc-5-razor-view
+    ////    // https://stackoverflow.com/questions/34710319/add-bootstrap-jquery-datepicker-to-mvc-5-razor-view
 
 
-    //    alert('doc Ready 2');
+    ////    alert('doc Ready 2');
 
 
-        // THIS IS JQUERY AJAX
-        // http://api.jquery.com/jquery.ajax/
+    //    // THIS IS JQUERY AJAX
+    //    // http://api.jquery.com/jquery.ajax/
 
+
+        // Description: Perform an asynchronous HTTP (Ajax) request.
+        // Somehow me must select the selected value as well...............
 
         $.ajax({
             url: "ReturnJSONCounsellorDataToAJax",
@@ -936,17 +940,10 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
             success: function (result) {
                 $(result).each(function () {
                     $("#Counsellor").append($("<option></option>").val(this.Counsellor1).html(this.Counsellor1));
-
-
-    
-
-
-
-
                 });
             },
             error: function (data) {
-                alert('Counsellor Loading Error!')
+                alert('Counsellor Loading Error!'+data)
             },
             complete: function (IQJXR, daStatus) {
                 alert('Counsellor Loading Complete');
@@ -957,58 +954,9 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
         });
 
-        
-        //<form action="/Home/CreateCaseNormal" method="post">
 
-        $('form').submit(function () {
-
-            // Do the submit with an Ajax function
-            // so we can update a spinner :)
-
-
-            alert('Submitting Form');
-
-
-
-            if (!$('form').validate().valid()) {
-
-                alert('Form not valid!');
-
-                alert('Need to cancel the submit?');
-
-                var validator = $('#form').validate();
-                validator.form();
-            }
-
-            else {
-
-                alert('Form is valid');
-
-
-            }
-           
-
-
-
-
-
-            // This replaces the entire HTML PAGE contents with a DIV  - that says thank you 
-
-            //$('form').html("<div id='message'></div>");
-            //$('#message').html("<h2>Your request is on the way!</h2>")
-            //    .append("<p>someone</p>")
-            //    .hide()
-            //    .fadeIn(1500, function () {
-            //        $('#message').append("<img id='checkmark' src='images/ok.png' />");
-            //    });
-
-            // $.ajax({
-
-            // });
-
-        });
-
-
+        // Description: Perform an asynchronous HTTP (Ajax) request.
+        // Somehow me must select the selected value as well...............
 
         $.ajax({
             url: "ReturnJSONHelplineDataToAJax",
@@ -1024,32 +972,185 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
         });
 
 
-        // Maybe this can work for Dedicated Lines.
-        //$.ajax({
-        //    url: "ReturnJSONCallTimeOfDayDataToAJax",
-        //    type: "GET",
-        //    contentType: "application/json; charset=utf-8",
-        //    datatype: JSON,
-        //    success: function (result) {
-        //        $(result).each(function () {
-        //            $("#DLCallTimeOfDay").append($("<option></option>").val(this.Time).html(this.Time));
-        //        });
-        //    },
-        //    error: function (data) { }
-        //});
+
+
+        
+    //    //<form action="/Home/CreateCaseNormal" method="post">
+
+    //    // Triggering when the submit button get clicked??
+    //    //$('submit').click(function () {
+
+
+    //    //    alert('The submit button was clicked');
+
+
+    //    //})
+
+
+    //    // We reference a Control on a form by ists ID as $(#TheControlID).
+    //    // Thus we add a Hash in fron of it
+
+    //    // Otherwise we can reference the type ony 
+    //    // With no Hash like $(button).
+
+
+    //    // THIS SEEMS TO WORK, byut why is the default functionality of the validation now GONE??????
+          // OKAY _ THIS OVERRIDES / !!IGNORES!!!  ALL THE BASIC VALIDATION FUNCTIONALITY OF CLIENT SIDE VALIDATUION.          
+          // SEEMS LIKE WE NEED TO SPECIFY THE VALIDATION RULES AGAIN IF YOU DO THIS? 
+          // https://stackoverflow.com/questions/15625195/jquery-validator-plugin-ajax-submitting-not-working
+          // 
+
+        /*
+        $('form').validate({
 
 
 
-        // alert('here 1');
-        // Focus on the first Text Field.
+              submitHandler: function (form) {
+                  $.ajax({
+                      type: "POST",
+                      url: "/Home/CreateCaseNormal",
+                      data: $(form).serialize(),
+                      success: function () {
+                          $(form).html("<div id='message'></div>");
+                          $('#message').html("<h2>Your request is on the way!</h2>")
+                              .append("<p>someone</p>")
+                              .hide()
+                              .fadeIn(1500, function () {
+                                  $('#message').append("<img id='checkmark' src='images/ok.png' />");
+                              });
+                      }
+                  });
+                  return false; // required to block normal submit since you used ajax
+              
+            }
+        });
+        */
 
-        document.getElementById("Counsellor").focus();
+        // OKAY so lets try catching the SUBMIT, DO THE VALIDATION 
+        // and then SUBMITTING VIA AJAX if the validation is correct.......
+        $('form').submit(function (form) {
 
-        // alert('here 2');
+            alert('caught submitting here');
+
+            // This Cancels teh submit, AND IT PROCEEDS WITH THE VALIDATION!!!!
+            event.preventDefault();
+
+            // Proven this Works!
+            alert(
+                $('form').valid()
+            );
 
 
-    //    $(#Counsellor)[0].focus();
-    //    alert('here 3');
+            if ($('form').valid() == true) {
+              
+                // DO AN AJAX TO SUBMIT THE FORM!!!
+                alert('Submit the AJAX!');
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/CreateCaseNormal",
+                    data: $('form').serialize(),
+                    success: function () {
+                        $('form').html("<div id='message'></div>");
+                        $('#message').html("<h2>Your request is on the way!</h2>")
+                            .append("<p>someone</p>")
+                            .hide()
+                            .fadeIn(1500, function () {
+                                $('#message').append("<img id='checkmark' src='images/ok.png' />");
+                            });
+                    }
+                });
+
+
+            }
+
+
+
+
+        });
+
+
+
+
+
+    //    //// This Triggerrs when the for gets submitted
+    //    //$('form').submit(function () {
+
+    //    //    // Do the submit with an Ajax function
+    //    //    // so we can update a spinner :)
+
+    //    //    alert('Submitting Form');
+
+
+    //    //    if (!$('form').valid()) {
+
+    //    //        alert('Form not valid!');
+
+    //    //        alert('Need to cancel the submit?');
+
+    //    //        //var validator = $('#form').validate();
+    //    //        //validator.form();
+
+
+    //    //    }
+
+    //    //    else {
+
+    //    //        alert('Form is valid');
+
+
+    //    //        // So lets submit it with Ajax!
+
+    //    //    }
+           
+
+
+
+
+
+    //        // This replaces the entire HTML PAGE contents with a DIV  - that says thank you 
+
+    //        //$('form').html("<div id='message'></div>");
+    //        //$('#message').html("<h2>Your request is on the way!</h2>")
+    //        //    .append("<p>someone</p>")
+    //        //    .hide()
+    //        //    .fadeIn(1500, function () {
+    //        //        $('#message').append("<img id='checkmark' src='images/ok.png' />");
+    //        //    });
+
+    //        // $.ajax({
+
+    //        // });
+
+    //    // });
+
+
+    //    // Maybe this can work for Dedicated Lines.
+    //    //$.ajax({
+    //    //    url: "ReturnJSONCallTimeOfDayDataToAJax",
+    //    //    type: "GET",
+    //    //    contentType: "application/json; charset=utf-8",
+    //    //    datatype: JSON,
+    //    //    success: function (result) {
+    //    //        $(result).each(function () {
+    //    //            $("#DLCallTimeOfDay").append($("<option></option>").val(this.Time).html(this.Time));
+    //    //        });
+    //    //    },
+    //    //    error: function (data) { }
+    //    //});
+
+
+
+    //    // alert('here 1');
+    //    // Focus on the first Text Field.
+//    document.getElementById("Counsellor").focus();
+
+    
+    //    // alert('here 2');
+
+
+    ////    $(#Counsellor)[0].focus();
+    ////    alert('here 3');
 
 
     });
