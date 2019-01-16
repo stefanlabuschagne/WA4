@@ -785,12 +785,13 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
     @* DISTRESS RATINGS*@
 
-           
+    <h1> Distress Ratings</h1>
+
     <div class="form-group">
         @Html.LabelFor(model => model.DistressRatingBegining, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
 
-            <div class="col-md-2" >
+            <div class="col-md-2">
                 @Html.Label("daOption1", "Very Stressed - 1")
                 @Html.RadioButtonFor(model => model.DistressRatingBegining, 1, new { id = "daOption1" })
             </div>

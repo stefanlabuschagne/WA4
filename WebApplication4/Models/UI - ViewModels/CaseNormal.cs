@@ -11,8 +11,6 @@ using System.Web.Mvc;
 namespace WebApplication4.UIModels
 {
 
-
-
     // https://stackoverflow.com/questions/11064316/what-is-viewmodel-in-mvc
 
    
@@ -295,10 +293,10 @@ namespace WebApplication4.UIModels
         [Display(Name = "University Support Services")]
         public bool  ReferUniversitySupportServices { get; set; }
 
-        [Required]
+        [Required, Display(Name="Beginning of call")]
         public int DistressRatingBegining { get; set; }
 
-        [Required]
+        [Required, Display(Name = "End of call")]
         public int DistressRatingEnd { get; set; }
 
     }
