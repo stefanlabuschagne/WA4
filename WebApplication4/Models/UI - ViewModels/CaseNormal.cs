@@ -295,10 +295,10 @@ namespace WebApplication4.UIModels
         [Display(Name = "University Support Services")]
         public bool  ReferUniversitySupportServices { get; set; }
 
-        [Required, DefaultValue(3),Range(1,5)]
+        [Required]
         public int DistressRatingBegining { get; set; }
 
-        [Required, DefaultValue(3),Range(1,5)]
+        [Required]
         public int DistressRatingEnd { get; set; }
 
     }
