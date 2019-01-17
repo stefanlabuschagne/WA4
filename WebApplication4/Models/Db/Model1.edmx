@@ -4,12 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DAISYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'DAISY.dbo.AgeGroups' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="AgeGroups">
-          <Property Name="Group" Type="varchar" MaxLength="10" />
-        </EntityType>-->
+    <Schema Namespace="DAISYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Callers">
           <Key>
             <PropertyRef Name="CALLERID" />
@@ -159,95 +154,12 @@ warning 6013: The table/view 'DAISY.dbo.AgeGroups' does not have a primary key d
           <Property Name="BinaryData" Type="image" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'DAISY.dbo.DownloadDataCurrentYear' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DownloadDataCurrentYear">
-          <Property Name="Year" Type="int" />
-          <Property Name="Month" Type="nvarchar" MaxLength="4000" />
-          <Property Name="CallDate" Type="datetime" />
-          <Property Name="Age" Type="varchar" MaxLength="10" />
-          <Property Name="Gender" Type="varchar" MaxLength="10" />
-          <Property Name="Race" Type="varchar" MaxLength="50" />
-          <Property Name="MedicalAid" Type="varchar" MaxLength="10" />
-          <Property Name="Medication" Type="varchar" MaxLength="10" />
-          <Property Name="Province" Type="varchar" MaxLength="50" />
-          <Property Name="ReasonADHD" Type="bit" />
-          <Property Name="ReasonAlzheimersDementia" Type="bit" />
-          <Property Name="ReasonAnxiety" Type="bit" />
-          <Property Name="ReasonBipolar" Type="bit" />
-          <Property Name="ReasonDebtPovertyUnemployment" Type="bit" />
-          <Property Name="ReasonDepression" Type="bit" />
-          <Property Name="ReasonEatingDisoirder" Type="bit" />
-          <Property Name="ReasonHIVAIDS" Type="bit" />
-          <Property Name="ReasonInformation" Type="bit" />
-          <Property Name="ReasonLossGriefLoneliness" Type="bit" />
-          <Property Name="ReasonNone" Type="bit" />
-          <Property Name="ReasonOCD" Type="bit" />
-          <Property Name="ReasonOtherIllness" Type="bit" />
-          <Property Name="ReasonPhysicalEmotionalAbuse" Type="bit" />
-          <Property Name="ReasonPostNatalDepression" Type="bit" />
-          <Property Name="ReasonPTSDTrauma" Type="bit" />
-          <Property Name="ReasonReationshipDomesticAbuse" Type="bit" />
-          <Property Name="ReasonSchizophrenia" Type="bit" />
-          <Property Name="ReasonSelfMutilation" Type="bit" />
-          <Property Name="ReasonSexualAbuseRape" Type="bit" />
-          <Property Name="ReasonSleepingDisorder" Type="bit" />
-          <Property Name="ReasonSocialPhobia" Type="bit" />
-          <Property Name="ReasonStress" Type="bit" />
-          <Property Name="ReasonSubstanceAbuse" Type="bit" />
-          <Property Name="ReasonSuicide" Type="bit" />
-          <Property Name="ReasonFrequentCaller" Type="bit" />
-          <Property Name="ReasonBullying" Type="bit" />
-          <Property Name="ReasonPregnancy" Type="bit" />
-          <Property Name="ReasonSexuality" Type="bit" />
-          <Property Name="ReasonOtherReason" Type="bit" />
-          <Property Name="ReasonFollowUp" Type="bit" />
-          <Property Name="ReferDASGFaceToFace" Type="bit" />
-          <Property Name="ReferGP" Type="bit" />
-          <Property Name="ReferGovHospital" Type="bit" />
-          <Property Name="ReferLiteratureWebsite" Type="bit" />
-          <Property Name="ReferNone" Type="bit" />
-          <Property Name="ReferOther" Type="bit" />
-          <Property Name="ReferOtherNGOHelpline" Type="bit" />
-          <Property Name="ReferPoliceStation" Type="bit" />
-          <Property Name="ReferPrivateHospital" Type="bit" />
-          <Property Name="ReferPsychiatrist" Type="bit" />
-          <Property Name="ReferPsychologist" Type="bit" />
-          <Property Name="ReferRapeCrisis" Type="bit" />
-          <Property Name="ReferShelter" Type="bit" />
-          <Property Name="ReferSocialWorker" Type="bit" />
-          <Property Name="ReferSupportGroup" Type="bit" />
-          <Property Name="ReferTraumaCentre" Type="bit" />
-          <Property Name="ReferRehabilitationCentre" Type="bit" />
-          <Property Name="ReasonBorderlinePersonalityDisorder" Type="bit" />
-          <Property Name="ReferUniversityStudentWellness" Type="bit" />
-          <Property Name="ReferSadagHelpLine" Type="bit" />
-          <Property Name="ReferSelfHelp" Type="bit" />
-          <Property Name="ReferUber" Type="bit" />
-          <Property Name="HelpLine" Type="varchar" MaxLength="50" />
-          <Property Name="DLCallTimeOfDay" Type="varchar" MaxLength="50" />
-          <Property Name="CalledOnBehalfOf" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'DAISY.dbo.Stats By Disorder' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Stats By Disorder">
-          <Property Name="Measure" Type="varchar" MaxLength="38" />
-          <Property Name="Jan" Type="int" />
-          <Property Name="Feb" Type="int" />
-          <Property Name="Mar" Type="int" />
-          <Property Name="Apr" Type="int" />
-          <Property Name="May" Type="int" />
-          <Property Name="Jun" Type="int" />
-          <Property Name="Jul" Type="int" />
-          <Property Name="Aug" Type="int" />
-          <Property Name="Sep" Type="int" />
-          <Property Name="Oct" Type="int" />
-          <Property Name="Nov" Type="int" />
-          <Property Name="Dec" Type="int" />
-          <Property Name="Total" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'DAISY.dbo.Stats By Province' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Stats By Province">
+warning 6002: The table/view 'DAISY.dbo.Stats By Race - RN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Stats By Race - RN">
+          <Key>
+            <PropertyRef Name="RN" />
+          </Key>
+          <Property Name="RN" Type="bigint" Nullable="false" />
           <Property Name="Measure" Type="varchar" MaxLength="50" />
           <Property Name="Jan" Type="int" />
           <Property Name="Feb" Type="int" />
@@ -262,43 +174,25 @@ warning 6013: The table/view 'DAISY.dbo.Stats By Province' does not have a prima
           <Property Name="Nov" Type="int" />
           <Property Name="Dec" Type="int" />
           <Property Name="Total" Type="int" />
-        </EntityType>-->
+        </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'DAISY.dbo.Stats by Race' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Stats by Race">
-          <Property Name="Measure" Type="varchar" MaxLength="50" />
-          <Property Name="Jan" Type="int" />
-          <Property Name="Feb" Type="int" />
-          <Property Name="Mar" Type="int" />
-          <Property Name="Apr" Type="int" />
-          <Property Name="May" Type="int" />
-          <Property Name="Jun" Type="int" />
-          <Property Name="Jul" Type="int" />
-          <Property Name="Aug" Type="int" />
-          <Property Name="Sep" Type="int" />
-          <Property Name="Oct" Type="int" />
-          <Property Name="Nov" Type="int" />
-          <Property Name="Dec" Type="int" />
-          <Property Name="Total" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'DAISY.dbo.Stats by Sex' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Stats by Sex">
-          <Property Name="Measure" Type="varchar" MaxLength="10" />
-          <Property Name="Jan" Type="int" />
-          <Property Name="Feb" Type="int" />
-          <Property Name="Mar" Type="int" />
-          <Property Name="Apr" Type="int" />
-          <Property Name="May" Type="int" />
-          <Property Name="Jun" Type="int" />
-          <Property Name="Jul" Type="int" />
-          <Property Name="Aug" Type="int" />
-          <Property Name="Sep" Type="int" />
-          <Property Name="Oct" Type="int" />
-          <Property Name="Nov" Type="int" />
-          <Property Name="Dec" Type="int" />
-          <Property Name="Total" Type="int" />
-        </EntityType>-->
+warning 6002: The table/view 'DAISY.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
         <Function Name="CamelCase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="Str" Type="varchar" Mode="In" />
         </Function>
@@ -489,9 +383,37 @@ warning 6013: The table/view 'DAISY.dbo.Stats by Sex' does not have a primary ke
           <EntitySet Name="DLTypes" EntityType="Self.DLTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Helplines" EntityType="Self.Helplines" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SQL COMMANDS" EntityType="Self.SQL COMMANDS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stats By Race - RN" EntityType="Self.Stats By Race - RN" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Stats By Race - RN].[RN] AS [RN], 
+    [Stats By Race - RN].[Measure] AS [Measure], 
+    [Stats By Race - RN].[Jan] AS [Jan], 
+    [Stats By Race - RN].[Feb] AS [Feb], 
+    [Stats By Race - RN].[Mar] AS [Mar], 
+    [Stats By Race - RN].[Apr] AS [Apr], 
+    [Stats By Race - RN].[May] AS [May], 
+    [Stats By Race - RN].[Jun] AS [Jun], 
+    [Stats By Race - RN].[Jul] AS [Jul], 
+    [Stats By Race - RN].[Aug] AS [Aug], 
+    [Stats By Race - RN].[Sep] AS [Sep], 
+    [Stats By Race - RN].[Oct] AS [Oct], 
+    [Stats By Race - RN].[Nov] AS [Nov], 
+    [Stats By Race - RN].[Dec] AS [Dec], 
+    [Stats By Race - RN].[Total] AS [Total]
+    FROM [dbo].[Stats By Race - RN] AS [Stats By Race - RN]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DAISYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -830,7 +752,45 @@ warning 6013: The table/view 'DAISY.dbo.Stats by Sex' does not have a primary ke
             <Parameter Name="DistressRatingBegining" Mode="In" Type="Int32" />
             <Parameter Name="DistressRatingEnd" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="database_firewall_rules" EntityType="DAISYModel.database_firewall_rules" />
+          <EntitySet Name="Stats_By_Race___RN" EntityType="DAISYModel.Stats_By_Race___RN" />
         </EntityContainer>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="start_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="end_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Stats_By_Race___RN">
+          <Key>
+            <PropertyRef Name="RN" />
+          </Key>
+          <Property Name="RN" Type="Int64" Nullable="false" />
+          <Property Name="Measure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Jan" Type="Int32" />
+          <Property Name="Feb" Type="Int32" />
+          <Property Name="Mar" Type="Int32" />
+          <Property Name="Apr" Type="Int32" />
+          <Property Name="May" Type="Int32" />
+          <Property Name="Jun" Type="Int32" />
+          <Property Name="Jul" Type="Int32" />
+          <Property Name="Aug" Type="Int32" />
+          <Property Name="Sep" Type="Int32" />
+          <Property Name="Oct" Type="Int32" />
+          <Property Name="Nov" Type="Int32" />
+          <Property Name="Dec" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -996,6 +956,39 @@ warning 6013: The table/view 'DAISY.dbo.Stats by Sex' does not have a primary ke
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="CreateCaseUpdate" FunctionName="DAISYModel.Store.CreateCaseUpdate" />
           <FunctionImportMapping FunctionImportName="CreateCaseWrite" FunctionName="DAISYModel.Store.CreateCaseWrite" />
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="DAISYModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stats_By_Race___RN">
+            <EntityTypeMapping TypeName="DAISYModel.Stats_By_Race___RN">
+              <MappingFragment StoreEntitySet="Stats By Race - RN">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Dec" ColumnName="Dec" />
+                <ScalarProperty Name="Nov" ColumnName="Nov" />
+                <ScalarProperty Name="Oct" ColumnName="Oct" />
+                <ScalarProperty Name="Sep" ColumnName="Sep" />
+                <ScalarProperty Name="Aug" ColumnName="Aug" />
+                <ScalarProperty Name="Jul" ColumnName="Jul" />
+                <ScalarProperty Name="Jun" ColumnName="Jun" />
+                <ScalarProperty Name="May" ColumnName="May" />
+                <ScalarProperty Name="Apr" ColumnName="Apr" />
+                <ScalarProperty Name="Mar" ColumnName="Mar" />
+                <ScalarProperty Name="Feb" ColumnName="Feb" />
+                <ScalarProperty Name="Jan" ColumnName="Jan" />
+                <ScalarProperty Name="Measure" ColumnName="Measure" />
+                <ScalarProperty Name="RN" ColumnName="RN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

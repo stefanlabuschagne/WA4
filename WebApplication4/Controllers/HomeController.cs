@@ -13,6 +13,72 @@ namespace WebApplication4.Controllers
             return View();
         }
 
+
+        // FrequencyReport Controller Code to diaply the Data in the Model.
+        // The is no post-controller as we do not do a post from the screen.
+        public ActionResult FrequencyReport()
+        {
+
+            // Do something here to accecc the data via the DAL 
+            // to query the Database View and return data.
+
+            var DaContext = new WebApplication4.Models.Db.DAISYEntities();
+
+            // Create a UI VIEWMODEL and populate it withj data from the VIEW.
+
+            // new ViewModel
+            // https://www.red-gate.com/simple-talk/dotnet/asp-net/revisiting-partial-view-rendering-in-asp-net-mvc/
+
+
+           IEnumerable frs <WebApplication4.Models.Db.DAISYEntities.FrequencyReport> fr =  DaContext.Stats_By_Race___RN.Where(x => x.Oct > 100).ToList()
+
+
+
+            // THIS WILL GET TO A DATALAYER COLLECTION SOMEHOW.
+
+           WebApplication4.UIModels.FrequencyReport frp = new WebApplication4.UIModels.FrequencyReport();
+
+
+            foreach (var f in frs)
+
+            {
+
+                frp.Jan = f.Jan;
+                frp.Feb = f.feb;
+                frp.Des = f.Dec;
+                frp.Total = f.Total;
+
+            }           
+
+
+           // https://stackoverflow.com/questions/27108846/how-to-map-data-access-to-business-logic-objects-in-entity-framework
+
+           /*
+           Yes, there is a bunch of left-right mapping to "convert" one class to another, 
+           but it's a clean separation of internal business logic classes for later on. 
+           Straight table to POCO conversions seems silly at first, but just wait until your 
+           DBA want's to normalize a few fields or you decide to add a collection to those 
+           simple objects.Being able to manage your business objects without breaking the rest of you app is priceless.
+           */
+
+
+
+
+
+           // Create the UI Model with data (Work on this!)
+           WebApplication4.UIModels.FrequencyReport FC = new WebApplication4.UIModels.FrequencyReport();
+
+
+            ViewBag.Message = "Frequency Report";
+
+            return View(Helplines);
+
+        }
+
+
+
+
+
         // CreateCaseNormal - I Typed this stuff myself!0
         public ActionResult CreateCaseNormal()
         {
@@ -45,7 +111,7 @@ namespace WebApplication4.Controllers
                 // Call a SP to add the Model Data.
                 var DaContext = new WebApplication4.Models.Db.DAISYEntities();
 
-                //  var Calls = new 
+                //  var Calls = new                 
 
                 DaContext.CreateCaseWrite(model.Name,
                     model.Surname,

@@ -1,0 +1,48 @@
+﻿@model WebApplication4.UIModels.FrequencyReport
+
+@{
+    ViewBag.Title = "FrequencyReport";
+}
+
+<h2>FrequencyReport</h2>
+
+
+<div class="form-horizontal">
+
+    <h4>Frequency Report</h4>
+    <hr />
+
+
+    <div>
+        @{ var grid = new WebGrid(Model, canPage: false);}
+    
+
+        @grid.GetHtml(null,columns:grid.Columns() 
+        )
+
+
+
+        )
+    </div>
+
+
+
+
+
+
+
+    </div>
+
+<script>
+
+    // AJAX CALLS to loiad the data in the reports maybe??????????
+
+
+
+
+</script>
+
+
+
+
+
