@@ -1,4 +1,4 @@
-﻿@model WebApplication4.UIModels.FrequencyReport
+﻿@model IEnumerable <WebApplication4.UIModels.FrequencyReport>
 
 @{
     ViewBag.Title = "FrequencyReport";
@@ -7,12 +7,12 @@
 <h2>FrequencyReport</h2>
 
 
-<div class="form-horizontal">
+<tr class="form-horizontal">
 
     <h4>Frequency Report</h4>
     <hr />
 
-
+    @*
     <div>
         @{ var grid = new WebGrid(Model, canPage: false);}
     
@@ -24,14 +24,58 @@
 
         )
     </div>
+    *@
+
+    <table border="1" width="100%">
+
+        <thead>
+
+            <td> Gender  </td>
+            <td> Jan  </td>
+            <td> Feb   </td>
+            <td> Mar  </td>
+            <td> Apr   </td>
+            <td> May  </td>
+            <td> Jun   </td>
+
+            <td> Jul  </td>
+            <td> Aug   </td>
+            <td> Sep  </td>
+            <td> Oct   </td>
+            <td> Nov  </td>
+            <td> Des   </td>
+            <td> Total   </td>
+
+        </thead>
 
 
 
+        @foreach (var asset in Model)
+        {
+            <tr>
+                <td> @asset.Measure  </td>
+                <td> @asset.Jan  </td>
+                <td> @asset.Feb   </td>
+                <td> @asset.Mar  </td>
+                <td> @asset.Apr   </td>
+                <td> @asset.May  </td>
+                <td> @asset.Jun   </td>
 
+                <td> @asset.Jul  </td>
+                <td> @asset.Aug   </td>
+                <td> @asset.Sep  </td>
+                <td> @asset.Oct   </td>
+                <td> @asset.Nov  </td>
+                <td> @asset.Des   </td>
 
+                <td> @asset.Total   </td>
 
+            </tr>
+        }
 
-    </div>
+    </table>
+
+</div>
 
 <script>
 
