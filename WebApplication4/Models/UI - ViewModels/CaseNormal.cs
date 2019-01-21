@@ -18,8 +18,45 @@ namespace WebApplication4.UIModels
     { }
 
 
+    // Appempt for a Model of a Search Screen 
     public class SearchCalls
-    { }
+    {
+
+        public string Name { get; set; }
+
+        public string Surname { get; set; }
+
+        public string Telephone1 { get; set; }
+
+        public string  Telephone2 { get; set; }
+
+
+        // This is the collection of Search results.
+        public Array SearchResults { get; set; }
+
+
+
+
+    }
+
+    // Class Containing The Saerch Results 
+    public class SearchResults
+    {
+        public int Callerid { get; set; }
+
+        public string Name { get; set; }
+
+        public string Surname { get; set; }
+
+        public string Email { get; set; }
+
+        public string Gender { get; set; }
+
+        public string Telephone1 { get; set; }
+
+        public string Telephone2 { get; set; }
+
+    }
 
 
 
@@ -80,9 +117,12 @@ namespace WebApplication4.UIModels
 
         [Required]
         public string Telephone1 { get; set; }
+
         public string Telephone2 { get; set; }
 
+        // THIS VALIDATION DOES NOT WORK JACK SHIT
         [Required, Display(Name = "E-Mail"), EmailAddress]
+        [RegularExpression(@"^\S*$", ErrorMessage = "Email Address cannot have white spaces")]
         public string EmailAddress { get; set; }
 
 

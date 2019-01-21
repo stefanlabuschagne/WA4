@@ -138,15 +138,15 @@ namespace WebApplication4.Controllers
 
 
 
-    //    // CreateCaseNormal - I Typed this stuff myself!0
-    //    public ActionResult CreateCaseNormal()
-    //    {
+        // CreateCaseNormal - I Typed this stuff myself!0
+        public ActionResult CreateCaseNormal()
+        {
 
-    //        ViewBag.Message = "Create New Case";
+            ViewBag.Message = "Create New Case";
 
-    //        return View();
+            return View();
       
-    //}
+    }
 
         // CreateCaseNormal - I Typed this stuff myself!
         // Thuis happpensd on the POST - When the form gets submitted back to the serevr.
@@ -273,7 +273,7 @@ namespace WebApplication4.Controllers
                 //          Nullable<bool> reasonRelationshipFamilyIssues, Nullable<bool> referCompanyEAP, Nullable<bool> 
                 //          referUniversitySupportServices, Nullable<int> distressRatingBegining, Nullable<int> distressRatingEnd)
 
-                DaContext.SaveChanges();
+                int i = DaContext.SaveChanges();              
 
                 return RedirectToAction("Index");
             }
@@ -282,6 +282,19 @@ namespace WebApplication4.Controllers
                 // MODELSLATE INVALID - SO SOMETING SUBMITTED WAS WRONG! (CALLDATE?)
 
                 int i = 0;
+
+
+                foreach (var V in ModelState.Values)
+                {
+
+                    if (V.Errors.Count > 0)
+                    {
+
+                        int o = 1;
+
+                    }
+
+                }
                 
             }
 
