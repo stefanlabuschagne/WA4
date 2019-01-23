@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
 
 // VIEWModel for Creating a Case 
@@ -14,12 +15,9 @@ namespace WebApplication4.UIModels
     // https://stackoverflow.com/questions/11064316/what-is-viewmodel-in-mvc
 
    
-    public class SearchCaller
-    { }
-
 
     // Appempt for a Model of a Search Screen 
-    public class SearchCalls
+    public class SearchCaller
     {
 
         public string Name { get; set; }
@@ -31,8 +29,8 @@ namespace WebApplication4.UIModels
         public string  Telephone2 { get; set; }
 
 
-        // This is the collection of Search results.
-        public Array SearchResults { get; set; }
+        // This is the Array of Search results. (Uses the Generic Namespace.)
+        public List <SearchResult>  DaSearchResults { get; set; }
 
 
 
@@ -40,7 +38,7 @@ namespace WebApplication4.UIModels
     }
 
     // Class Containing The Saerch Results 
-    public class SearchResults
+    public class SearchResult
     {
         public int Callerid { get; set; }
 

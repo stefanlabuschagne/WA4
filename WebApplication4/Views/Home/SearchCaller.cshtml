@@ -1,0 +1,140 @@
+﻿<!--
+https://www.codeproject.com/Articles/424640/ASP-NET-MVC-HTML-Helper-for-the-jqGrid
+-->
+
+@{
+    ViewBag.Title = "SearchCaller";
+}
+
+<h2>SearchCaller</h2>
+
+
+<style type="text/css">
+    /*Here we will add css for style webgrid*/
+    .webgrid-table {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-size: 1.2e m;
+        width: 100 %;
+        display: table;
+        border-collapse: separate;
+        border: solid 1 px blue;
+        background-color: white;
+    }
+
+        .webgrid-table td, th {
+            border: 1 px solid blue;
+            padding: 3 px 7 px 2 px;
+        }
+
+    .webgrid-header {
+        background-color: yellow;
+        color: red;
+        padding-bottom: 4 px;
+        padding-top: 5 px;
+        text-align: left;
+    }
+    /*.webgrid-footer {
+
+        }*/
+    .webgrid-row-style {
+        padding: 3 px 7 px 2 px;
+    }
+
+    .webgrid-alternating-row {
+        background-color: pink;
+        padding: 3 px 7 px 2 px;
+    }
+</style>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @*<div class="form-horizontal">
+        <h4>SearchCaller</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telephone1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Telephone1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Telephone1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telephone2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Telephone2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Telephone2, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+
+    <div>Search Results:</div>
+
+    <div>
+
+
+        @{
+            var grid = new WebGrid(source: Model, rowsPerPage: 10, canSort: true, defaultSort: "Name");
+        }
+
+
+        /*for alteranating row style*/
+        @grid.GetHtml(tableStyle: "webgrid-table", headerStyle: "webgrid-header",
+                   //footerStyle: "webgrid-footer",
+                   alternatingRowStyle: "webgrid-alternating-row", rowStyle: "webgrid-row-style", mode: WebGridPagerModes.All, firstText: "<< First", previousText: "", lastText: "Last >>", //add next or prev link in webgrid
+ columns: grid.Columns(grid.Column("Name"), grid.Column("Surname"), grid.Column("Telephone1"), grid.Column("Telephone2"), grid.Column("Age"), grid.Column("Sex"), grid.Column("Race")
+                   //grid.Column(header: "Action",format:@@Html.ActionLink("Modify","") | @Html.ActionLink("Detail", "")| @Html.ActionLink("Remove", "")) @*format: @$@item.Salary*@ @*Format of currency*@
+                   ))
+
+
+        //
+
+
+
+
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+
+
+    // </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<!-- Some Script here with Ajax To Return a the Results of a Script Asyncroniously and populate the Results-->
+<script>
+
+
+
+
+</script>
+
