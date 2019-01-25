@@ -741,6 +741,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\FrequencyReport.cshtml" />
     <Content Include="Views\Home\SearchCaller.cshtml" />
+    <Content Include="Views\Home\Callreport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,6 +13,27 @@ namespace WebApplication4.Controllers
             return View();
         }
 
+        public ActionResult CallReport()
+        {
+
+            // DATABSE COPNTEXT VARIABLE I CREATE 
+            var DaContext = new WebApplication4.Models.Db.DAISYEntities();
+
+            // This is LINQ, NOT Fat Arroow notation.
+            var ReportData = (from Callers in DaContext.Callers
+                             join DaCalls in DaContext.Calls on Callers.CALLERID equals DaCalls.CALLERID
+                             select Callers).ToList();
+
+
+            // Guess we neeed to Create a UI MOdel and map the data to it and pass it to a 
+            return View(ReportData);
+
+
+        }
+
+
+
+
         public ActionResult FrequencyReport()
         {
 
