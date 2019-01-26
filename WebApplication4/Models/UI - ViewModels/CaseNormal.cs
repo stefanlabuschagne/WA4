@@ -19,7 +19,7 @@ namespace WebApplication4.UIModels
     // Appempt for a Model of a Search Screen 
     public class SearchCaller
     {
-
+        [Required]
         public string Name { get; set; }
 
         public string Surname { get; set; }
