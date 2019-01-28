@@ -176,12 +176,19 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CallDate, new { htmlAttributes = new { @class = "form-control" } })
 
-                @*                @Html.EditorFor(model => model.CallDate, new { @class = "form-control datepicker", @id = "datepicker" })   *@
+                <div class="input-group date">
+                    <input type="text" placeholder="click to show datepicker" id="pickyDate" value="@DateTime.Now.ToString().Substring(0,10)" />
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+
+                    @*                @Html.EditorFor(model => model.CallDate, new { @class = "form-control datepicker", @id = "datepicker" })   *@
 
 
-                @Html.ValidationMessageFor(model => model.CallDate, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.CallDate, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
 
         <h1> Caller Infromation </h1>
@@ -963,7 +970,7 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
                     </button>
                 </div>
                 <div class="modal-body">
-                    Call Submission Failed.<br/>
+                    Call Submission Failed.<br />
                     Please try again.
                 </div>
                 <div class="modal-footer">
@@ -997,6 +1004,11 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 }
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
+
+
 <script type="text/javascript">
 
     // alert('Here');
@@ -1015,6 +1027,13 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
             // alert('close button clicked!');
             window.location.reload();
         });
+
+        // See  _layout.chtml for the inclusion of  files (.js /.Css) for the bootstrap DATEPICKER. !!!
+        // This instantiates the Datepicker Control.
+        $('#pickyDate').datepicker({
+            format: "yyyy-mm-dd"
+        });
+
 
 
         //    // alert('doc Ready 1');
@@ -1183,7 +1202,7 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
                         alert('Call Submitting COMPLETE event.');
 
 
-                     
+
                     },
                     beforeSend: function (daP1, daP2, daP3) {
                         // alert('Counsellor Before Send');
@@ -1291,4 +1310,6 @@ new SelectListItem {             Text = "12pm - 4pm", Value = "12pm - 4pm"      
 
 
 </script>
+
+
 
