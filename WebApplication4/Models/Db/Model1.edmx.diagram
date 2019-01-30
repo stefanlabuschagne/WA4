@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8acf55bcb3414f5fb9e90eaa35df8b2a" Name="Diagram1">
+      <Diagram DiagramId="8acf55bcb3414f5fb9e90eaa35df8b2a" Name="Diagram1" ZoomLevel="98">
         <EntityTypeShape EntityType="DAISYModel.Caller" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DAISYModel.Call" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DAISYModel.Counsellor" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
